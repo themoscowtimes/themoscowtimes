@@ -1,0 +1,122 @@
+.live-excerpt {
+	@color-secundary: @color-1;
+	@color-default: #fff;
+	@color-bg-1: #51673b;
+	@color-bg-2: darken(@color-default, 20%);	
+	@color-bg-3: lighten(@color-secundary, 70%);
+	@color-bg-4: @color-secundary;
+	@color-primary: @color-7;
+	
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	margin-bottom: @gutter;
+	background: @color-bg-1;
+	color: @color-default;
+	@media @md-up {
+		aspect-ratio: 4 / 1;	
+		&:hover {
+			background: darken(@color-primary, 10%);
+		}
+	}
+	
+	&__picture {
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		z-index:0;
+		
+		@media @sm-down {
+			aspect-ratio: 4;
+		}
+	}
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center center;
+		z-index:0;
+	}
+	
+	&__content {
+		z-index: 2;
+		padding: (@gutter/2);
+		color: @color-default;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		min-height: 175px;
+		transition: background ease 0.1s;
+		@media @md-up {
+			background: -moz-linear-gradient(top,  rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.45) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top,  rgba(0,0,0,0.45) 0%,rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.45) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom,  rgba(0,0,0,0.45) 0%,rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.45) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73000000', endColorstr='#73000000',GradientType=0 ); /* IE6-9 */
+		}
+		@media @sm-down {
+			padding-top: 25%;
+		}
+	}
+	
+	&__label {
+		margin-bottom: 12px;
+		@media @sm-down {
+			position: absolute;
+			top: 12px;
+		}
+	}
+
+	&__headline {
+		.header--style-4();
+		color: @color-default;
+		margin-bottom: @gutter;
+		padding-top: 12px;
+		flex-grow: 2;
+		display: flex;
+		align-items: top;
+		@media @sm-down {
+			olor: @color-secundary;
+		}
+		@media @lg-up {
+			font-size: 1.4rem;
+		}
+	}
+	
+	&__posts {
+		display: flex;
+		justify-content: stretch;
+		align-items: top;
+		@media @xs {
+			padding: 0 12px;
+		}
+	}
+	
+	&__post {
+		font-family: @font-family-2;
+		line-height: 1.4em;
+		color: @color-default;
+		&:last-child {
+			border: none;
+		}
+		
+		
+		@media @md-up {
+			border-right: 1px solid fade(@color-default, 50%);
+			//color: @color-default;
+		
+		}
+		@media @sm {
+			//color: @color-secundary;
+			border-right: 1px solid fade(@color-default, 10%);
+		}
+		
+		@media @xs {
+			//color: @color-secundary;
+			border-bottom: 1px solid fade(@color-default, 10%);
+			padding: 8px 0!important;
+		}
+	}
+	
+}

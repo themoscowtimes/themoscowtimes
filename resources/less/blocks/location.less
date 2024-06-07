@@ -1,0 +1,50 @@
+.location {
+	
+}
+
+.location__header{
+	&:extend(.item-header);
+	margin-bottom: @gutter;
+}
+
+.location__featured-image {
+	margin-bottom: @gutter;
+}
+
+.location__label {
+	.color-10();
+}
+
+.location__details {
+	@media @sm-up {
+		width: 200px;
+	}
+	@media @lg-up {
+		width: 280px;
+	}
+}
+
+.location-details-section{
+
+	
+	
+	
+}
+
+.location__time {
+	display: inline-block;
+	background: #000;
+	color: #fff;
+	clear: both;
+	padding: (@gutter/2);
+	font-weight: 700;
+	font-size: 1.2rem;
+	.mb-3();
+}
+
+
+
+.location__content {
+	.item-content();
+}
+

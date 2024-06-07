@@ -1,0 +1,16 @@
+.banner {
+	text-align: center;
+	.banner-inner {
+		margin: 0 auto;
+	}
+}
+
+.sidebar .banner {
+	margin-bottom: @gutter;
+	overflow: hidden;
+	&:first-child {
+		_margin-top: calc(
+			@cluster__label__font-size ~" + " @cluster__label__padding
+		);
+	}
+}

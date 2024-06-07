@@ -1,0 +1,143 @@
+.live-post {
+	@color-primary: @color-3;
+	@color-secundary: @color-7;
+	@color-action: @color-4;
+	@color-light: #fff;
+
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+
+	@media @sm-down {
+		flex-direction: column;
+		border-left: 1px solid @color-secundary;
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: "";
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			border: 2px solid @color-primary;
+			background: @color-light;
+			transform: translateX(-50%);
+		}
+	}
+
+	/* specific modifier for new loaded items within the liveblog */
+	&--new {
+		@media @sm-down {
+			&:before {
+				animation-name: newpostmobile;
+				animation-duration: 2s;
+				animation-iteration-count: 20;
+			}
+		}
+
+		.live-post__body {
+			@media @md-up {
+				&:before {
+					animation-name: newpost;
+					animation-duration: 2s;
+					animation-iteration-count: 20;
+				}
+			}
+		}
+	}
+
+	/* default styling post */
+	&__date {
+		width: 200px;
+		flex-shrink: 0;
+		padding-right: @gutter;
+
+		text-transform: uppercase;
+		.font-family-2();
+		font-weight: 400;
+		color: @color-primary;
+		font-size: 0.8rem;
+
+		@media @sm-down {
+			padding-left: @gutter;
+			line-height: 0.8rem;
+			margin-bottom: (@gutter / 2);
+			width: auto;
+		}
+	}
+
+	&__body {
+		position: relative;
+		padding-left: @gutter;
+		flex-grow: 2;
+		padding-bottom: @gutter * 1.5;
+
+		p,
+		ul,
+		ol {
+			margin-bottom: @gutter;
+			line-height: 1.9em; /* added jk */
+		}
+
+		a {
+			color: @color-3;
+		}
+
+		@media @md-up {
+			border-left: 1px solid @color-secundary;
+			padding-left: @gutter * 1.5;
+
+			&:before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				content: "";
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				border: 2px solid @color-primary;
+				background: @color-light;
+				transform: translate(-50%, 100%);
+			}
+		}
+	}
+
+	/* remove padding from last post */
+	&:last-of-type {
+		.live-post__body {
+			padding-bottom: 0;
+		}
+	}
+
+	/* post annimation */
+	@keyframes newpost {
+		0% {
+			border-color: @color-action;
+			transform: translate(-50%, 100%) scale(1);
+		}
+		50% {
+			border-color: @color-action;
+			transform: translate(-50%, 100%) scale(2);
+		}
+		100% {
+			border-color: @color-action;
+			transform: translate(-50%, 100%) scale(1);
+		}
+	}
+
+	@keyframes newpostmobile {
+		0% {
+			border-color: @color-action;
+			transform: translateX(-50%) scale(1);
+		}
+		50% {
+			border-color: @color-action;
+			transform: translateX(-50%) scale(1.5);
+		}
+		100% {
+			border-color: @color-action;
+			transform: translateX(-50%) scale(1);
+		}
+	}
+}

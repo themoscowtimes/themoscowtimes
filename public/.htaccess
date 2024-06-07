@@ -1,0 +1,41 @@
+Options -Indexes
+DirectoryIndex index.php
+
+RewriteEngine On
+
+<IfModule mod_php7.c>
+	php_value post_max_size 25M
+	php_value upload_max_filesize 25M
+	php_value max_input_vars 5000
+</IfModule>
+
+# redirect ads.txt to freestar.io pub network
+Redirect 301 /ads.txt https://a.pub.network/themoscowtimes-com/ads.txt
+
+# Keep Authorization headers
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+
+# redirect all requests to www
+RewriteCond %{HTTP_HOST} ^themoscowtimes\.com [NC]
+RewriteRule .* https://www.themoscowtimes.com/$0 [R=301,L]
+
+# redirect old articles ending in [numbers].html to old site
+# RewriteCond %{REQUEST_URI} [0-9]{4,}\.html$
+RewriteRule /news/article/(.*)/[0-9]{4,}\.html$ https://www.themoscowtimes.com/archive/$1 [R=302,L]
+
+# redirect stray dev-urls to the moscowtimes
+RewriteCond %{HTTP_HOST} ^host880\.procolix\.com [NC]
+RewriteRule .* https://www.themoscowtimes.com/$0 [R=301,L]
+
+# rewrite sitemaps to static
+RewriteCond %{REQUEST_URI} sitemap\/
+RewriteRule .* https://static.themoscowtimes.com/$0 [R=301,L]
+
+
+# CSS build script
+RewriteRule ^css/build$ css.php [PT,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php/$0 [PT]

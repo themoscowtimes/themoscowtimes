@@ -1,0 +1,243 @@
+
+
+.item-header {
+	h1 {
+		.header--style-1
+	}
+	
+}
+
+
+.item-header {
+	
+	margin-bottom: @gutter;
+	@media @md-down {
+		margin-bottom: (@gutter/2);
+	}
+	
+	h1 {
+		.header--style-1();
+	}
+	h2 {
+		.header--style-2();
+	}
+	
+	
+}
+
+
+
+.item-intro {
+	font-family: @font-family-3;
+	padding-top: @gutter;
+	margin-bottom: @gutter;
+	
+	font-weight: 300;
+	font-size: 1.2rem;
+	
+	line-height: 1.6em;
+	border-top: 1px solid @color-7;
+	
+	@media @md-down {
+		padding-top: (@gutter/2);
+		margin-bottom: (@gutter/2);
+	
+	}
+	@media @sm-down {
+		font-size: 1.1rem;
+	}
+}
+
+.featured-image {
+	.full-width-xs;
+	margin-bottom: @gutter;
+	
+	& figcaption {
+
+
+
+		display: block;
+		line-height: 1.2em;
+		color: @color-6;
+		font-size: 0.82rem;
+		font-weight: 300;
+		text-align: right;
+		padding: (@gutter/3) 0px;
+		font-family: @font-family-2;
+		.clearfix();
+
+
+		
+
+		@media @xs {
+			padding: (@gutter/3);
+			text-align: left;
+		}
+	}
+	
+	&__caption {
+		float: left;
+		margin-bottom: 0.4em;
+		font-weight: 600;
+		
+		@media @xs {
+			margin-right: 0.5em;
+		}
+	}
+	&__credits {
+		float: right;
+		color: @color-1;
+		
+		
+		@media @xs {
+			float: left;
+		}
+	}
+	
+}
+
+
+.item-content {
+	_font-weight: 300;
+	padding-bottom: @gutter;
+	.clearfix();
+	
+	h2 {
+		.content-header--style2
+	}
+	h3 {
+		font-family: @font-family-2;
+		font-weight: 600;
+		font-size: 1.3rem;
+		line-height: 1.3em;
+		margin-bottom: 0.3em;
+	}
+	
+	blockquote {
+		font-family: @font-family-3;
+		font-weight: 700;
+		font-size: 1.2rem;
+		padding-top: (@gutter*0.75);
+		padding-bottom: @gutter;
+		position: relative;
+		margin-bottom: (@gutter/2);
+		&:before {
+			content: '';
+			position: absolute;
+			top: (@gutter/4);
+			left: 0;
+			
+			background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAsCAYAAAFOLet/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA31JREFUeNpi+P//PwMUODCgAjCfBcr5jyTBiMxnQtN1gAEdIFnxH10K2QSskuhWMKIpAvMBAggvYkQzjhGb3VgBEwMRAKercUoABBBygLyHSvzHogEEEtDk6xlBmhkZGRlwaGDE4zSSAhKdX4jsbAYkJyngCRgQvo8vGeELTbg8QAChI5CNBgSixQEW0Cx4AoSRQFwy4kqa6GA9MQmP6GgCOhtu8wICNgsSkz7xpbB6ZHm0KGaYT0o8g1MmCXGJIg/SzISU6InN3464cksCAee+R8+NsIDAlbIEoPL70cs2gABCzxgwsB9L6P8nIukiJ2Fs+s/jsrgfhwZkPJ/E5IKBwbGMVAgRkz0IRSZR+pFzBbXAA6JVYonj8wSCyoGAkQbEBDWuxFWPQ9N7EnyPy2K8qRqnJiJBAg79Avgsfo9Fw30SLHUg5Gh0iw3wuZKC4N2PNV1BLcamIYFCC9/jTdBoPr5PYXZ6T0zpBrITIADx5VrDMAwD4YxBIQxCIRTCIARCGQxKIAxCIAxCxqAQWq3apKyKnbOv0vLf+vLw+S4X4L3aYRJb4+epXrXGhYbejY2VUul2tVH8mdDvr46tA74DfQL18QieQfDAONN7c0dwAQsnJWoi9WudX4KSltDlrk8nvDFSn//VXPcWeCDBksl05aS5yyr9DIxXLoKDU0pISs1eMDsyXbN6MoDVWS+BF/K0I5RAwK4O5GlTD9zU3QlDSI3UC+nBEb2tGsx2cbJ88r7gQkKv1p+ldGJP4HtYBk3Lj2+ELUYwGu3gTYBmzKYIQhiGwp1VUAmVgIRKqQQcIAEJSKgEJFQCEsDB7gUuDCl5TQKbmb3tkH75eWlalS9Cx6dKr697F3hnZ+kiwueMpStYLnDHmHQUfFCE/Db8CgLsgeufZI0XrfjMwPs7YK/gSCIKbu9rrTNMd8BZ0VlrllfNMxzAn0p037RoJXwU8KbsZzP+P/97REnHP+jh4ckePoSrKDgbhCqt0csRmcNB6FTDJIo9oxcPiXIn5V5sCXxoBUZ7ajIQ2bk14C3AC1pGyhYk2oECj4Cj7GwMEdBesjz0Dymyln5EajXkACOOOgNQZIFZarezO2Bk/s1GWU2alUUBI6CrUVYR0MK9c5+BR/fufEVFCQ72GTgznUSj8g1M4NL6ikKVdLoo6Wz8RsUZgWL157x4vG2qZziAf2FB/Zhg+9zgAAAAAElFTkSuQmCC');
+			background-size: contain;
+			background-repeat: no-repeat;
+			width: 22px;
+			height: 16px;
+			transform: rotate(180deg);
+		}
+		&:after {
+			content: '';
+			
+			position: absolute;
+			bottom: -(@gutter/4);
+			right: 0;
+			margin-right: 0.1em;
+			background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAsCAYAAAFOLet/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA31JREFUeNpi+P//PwMUODCgAjCfBcr5jyTBiMxnQtN1gAEdIFnxH10K2QSskuhWMKIpAvMBAggvYkQzjhGb3VgBEwMRAKercUoABBBygLyHSvzHogEEEtDk6xlBmhkZGRlwaGDE4zSSAhKdX4jsbAYkJyngCRgQvo8vGeELTbg8QAChI5CNBgSixQEW0Cx4AoSRQFwy4kqa6GA9MQmP6GgCOhtu8wICNgsSkz7xpbB6ZHm0KGaYT0o8g1MmCXGJIg/SzISU6InN3464cksCAee+R8+NsIDAlbIEoPL70cs2gABCzxgwsB9L6P8nIukiJ2Fs+s/jsrgfhwZkPJ/E5IKBwbGMVAgRkz0IRSZR+pFzBbXAA6JVYonj8wSCyoGAkQbEBDWuxFWPQ9N7EnyPy2K8qRqnJiJBAg79Avgsfo9Fw30SLHUg5Gh0iw3wuZKC4N2PNV1BLcamIYFCC9/jTdBoPr5PYXZ6T0zpBrITIADx5VrDMAwD4YxBIQxCIRTCIARCGQxKIAxCIAxCxqAQWq3apKyKnbOv0vLf+vLw+S4X4L3aYRJb4+epXrXGhYbejY2VUul2tVH8mdDvr46tA74DfQL18QieQfDAONN7c0dwAQsnJWoi9WudX4KSltDlrk8nvDFSn//VXPcWeCDBksl05aS5yyr9DIxXLoKDU0pISs1eMDsyXbN6MoDVWS+BF/K0I5RAwK4O5GlTD9zU3QlDSI3UC+nBEb2tGsx2cbJ88r7gQkKv1p+ldGJP4HtYBk3Lj2+ELUYwGu3gTYBmzKYIQhiGwp1VUAmVgIRKqQQcIAEJSKgEJFQCEsDB7gUuDCl5TQKbmb3tkH75eWlalS9Cx6dKr697F3hnZ+kiwueMpStYLnDHmHQUfFCE/Db8CgLsgeufZI0XrfjMwPs7YK/gSCIKbu9rrTNMd8BZ0VlrllfNMxzAn0p037RoJXwU8KbsZzP+P/97REnHP+jh4ckePoSrKDgbhCqt0csRmcNB6FTDJIo9oxcPiXIn5V5sCXxoBUZ7ajIQ2bk14C3AC1pGyhYk2oECj4Cj7GwMEdBesjz0Dymyln5EajXkACOOOgNQZIFZarezO2Bk/s1GWU2alUUBI6CrUVYR0MK9c5+BR/fufEVFCQ72GTgznUSj8g1M4NL6ikKVdLoo6Wz8RsUZgWL157x4vG2qZziAf2FB/Zhg+9zgAAAAAElFTkSuQmCC');
+			background-size: contain;
+			background-repeat: no-repeat;
+			width: 22px;
+			height: 16px;
+		}
+	}
+	p, ul, ol  {
+		margin-bottom: @gutter;
+		line-height: 1.9em; /* added jk */
+	}
+	
+	ul, ol {
+		margin-left: 1em;
+		li {
+			padding-left: .2em;
+			margin-bottom: 0.3em;
+		}
+	}
+	
+	ul {
+		list-style: disc;	
+	}
+	
+	ol {
+		list-style: decimal;	
+	}
+	
+	a {
+		color: @color-3;
+	}
+	
+	cite {
+		font-style: italic;
+	}
+	
+}
+
+.item-author--small {
+	text-transform: uppercase;
+	color: @color-3;
+	font-weight: 400;
+	font-size: 0.8rem;
+	font-family: @font-family-2;
+	line-height: 1.2em;	
+	display: inline-block; // schuift naast label
+	word-wrap: break-word;
+	word-break: keep-all;
+}
+
+.item-details {
+	
+}
+
+.item-bottom {
+	border-bottom: 1px solid @color-7;
+	margin-bottom: (@gutter/2);
+	margin-top: -1px;
+}
+
+
+.item-aside {
+	border: 1px solid @color-7;
+	padding: @gutter;
+	.border-radius();
+	@media @sm-down {
+		padding: (@gutter/2);
+	}
+}
+
+.item-info {
+	color: @color-3;
+	font-style: italic;
+	font-size: 0.9rem;
+	margin-bottom: (@gutter/2);
+}
+
+.content-header--style-1 {
+	
+}
+
+.content-header--style2 {
+	font-family: @font-family-2;
+	font-weight: 700;
+	font-size: 1.5rem;
+	line-height: 1.2em;
+	margin-bottom: .3em;
+}
+
+.content-header--style-3 {
+	
+}
+
+.timed-articles, .ranked-articles {
+	
+}
+
+.timed-articles__item, .ranked-articles__item {
+	.listed-articles__item();
+}

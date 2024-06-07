@@ -1,0 +1,38 @@
+.dialog {
+	@color-background: @color-3;
+	@color-text: @color-2;
+	@color-default: @color-1;
+	
+	background: @color-background;
+	&__close {
+		position: absolute;
+		top: 4px;
+		right: 8px;
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 24px;
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+	
+	&__content {
+		color:@color-text;
+		#padding(6);
+	}
+	
+	&__title {
+		#margin.bottom(1);
+		#text.heading-2(1);
+		color:@color-default;
+	}
+	
+	&__buttons {
+		#margin.top(2);
+	}
+	
+	&__button {
+		#margin.right(1);
+	}
+	
+}

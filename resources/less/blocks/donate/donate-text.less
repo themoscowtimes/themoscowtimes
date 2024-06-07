@@ -1,0 +1,19 @@
+.donate-text {
+	padding: @gutter 0 0 0;
+	text-align: center;
+	@media @sm-down {
+		text-align: left;
+	}
+	
+	&__header {
+		.item-header();
+	}
+
+	&__content {
+		.item-content();		
+		
+		&__highlight {
+			font-weight: 600;
+		}
+	}
+}

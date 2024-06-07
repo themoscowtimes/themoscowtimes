@@ -1,0 +1,139 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 4, 2018, 9:55:07 AM
+    Author     : Patrick
+*/
+
+.social {
+	display: flex;
+	align-items: center;
+}
+
+@social-icon--size: 35px;
+
+.social__icon {
+	display: inline-block;
+	width: @social-icon--size;
+	height: @social-icon--size;
+	.border-radius(100%);
+	color: #fff;
+	font-size: @social-icon--size*0.5;
+	margin-left: 0px;
+	margin-right: 0px;
+	text-align: center;
+	background-color: @color-7;
+	i.fa {
+		color: #fff;
+		line-height: @social-icon--size;
+	}
+	&:not(:last-of-type) {
+		margin-right: (@gutter/8);
+	}
+
+	&--pdf {
+		background-color: @color-3;
+	}
+}
+
+.social__icon--facebook {
+	background-color: @color-facebook;
+	font-size: @social-icon--size*0.54;
+	i.fa {
+		transform: translateX(-7%) translateY(2%);
+	}
+}
+.social__icon--twitter {
+	background-color: @color-twitter;
+	font-size: @social-icon--size*0.58;
+	i.fa {
+		transform: translateX(2%);
+	}
+}
+
+.social__icon--x-twitter {
+	background-color: @color-1;
+	font-size: @social-icon--size*0.58;
+	i.fa {
+		transform: translateX(2%);
+	}
+}
+
+.social__icon--telegram {
+	background-color: @color-telegram;
+	i.fa {
+		transform: translateX(-12%) translatey(-1%);
+	}
+}
+.social__icon--whatsapp {
+	font-size: @social-icon--size*0.59;
+	background-color: @color-whatsapp;
+	i.fa {
+		transform: translateX(1%) translateY(-1%);
+	}
+}
+
+.social__icon--youtube {
+	background-color: @color-youtube;
+}
+
+.social__icon--email {
+	font-size: @social-icon--size*0.54;
+	background-color: @color-email;
+	i.fa {
+		transform: translateX(1%) translateY(-1%);
+	}
+}
+
+@gradient-1: #feda77;
+@gradient-2: #dd2a7b;
+@gradient-3: #515bd3;
+@gradient-deg: 45deg;
+.social__icon--instagram {
+	font-size: @social-icon--size*0.59;
+	background: -webkit-linear-gradient(
+		@gradient-deg,
+		@gradient-1,
+		@gradient-2,
+		@gradient-3
+	);
+	background: linear-gradient(
+		@gradient-deg,
+		@gradient-1,
+		@gradient-2,
+		@gradient-3
+	);
+	i.fa {
+		transform: translateX(0%) translateY(0%);
+	}
+}
+
+.social__icon--rss {
+	background-color: #ed6100;
+	font-size: @social-icon--size*0.55;
+	i.fa {
+		transform: translateX(5%) translateY(0%);
+	}
+}
+
+.social__icon--newsletter {
+	background-color: #3c64c3;
+}
+
+.social-follow {
+	display: flex;
+	justify-content: space-between;
+}
+.social-follow__header {
+	font-family: @font-family-2;
+	text-transform: uppercase;
+	font-weight: 500;
+	line-height: @social-icon--size;
+}
+
+.social-follow__icons {
+	display: flex;
+}

@@ -1,0 +1,63 @@
+.button {
+	@color-background: @color-3; //blue
+	@color-background-2: @color-1; //black
+	@color-background-3: @color-4; //yellow
+	@color-light: @color-2; //white
+	@color-dark: @color-1; //black
+	@color-danger: @color-5; //red
+	
+	#padding.y(2);
+	#padding.x(4);
+    text-align: center;
+	
+	font-weight: 500;
+	background-color: @color-background;
+	color: @color-light;
+	display: inline-block;
+    cursor: pointer;
+	transition: background ease 0.2s;
+	font-size: 18px;
+	line-height: 18px;
+	text-transform: uppercase;
+	
+	@media @md-down {font-size: 18px;}
+	@media @sm-down {font-size: 17px; line-height: 17px; #padding.y(3); }
+	@media @xs { font-size: 16px; line-height: 16px;}
+
+	&:hover {
+		color: @color-light;
+		background-color: lighten(@color-background-2, 10%);
+	}
+	
+	&--small {
+		#padding.y(1);
+		#padding.x(3);
+		font-size: 15px;
+		font-weight: 400;
+	}
+	
+	&--primary {
+		background-color: @color-background-3;
+		color: @color-dark;
+	}
+	
+	&--secondary {
+		background-color: @color-background-2;
+		color: @color-light;
+	}
+	
+	&--danger {
+		background-color: @color-light;
+		color: @color-danger;
+		-webkit-box-shadow:inset 0px 0px 0px 1px @color-danger;
+		-moz-box-shadow:inset 0px 0px 0px 1px @color-danger;
+		box-shadow:inset 0px 0px 0px 1px @color-danger;
+		&:hover {
+			background-color: @color-danger;
+			color: @color-light;
+		}
+	}
+	
+}
+
+

@@ -1,0 +1,27 @@
+
+.sidebar {
+	
+	display: block;
+	height: 100%; // needed for sticky
+	@media @sm-up {
+		width: 336px;	
+	}
+	
+	.sidebar__section {
+		margin-bottom: (@gutter*1.5);
+	}
+	
+	.sidebar__section__header {
+		margin-bottom: (@gutter/2);
+		i.fa {
+			font-size: 1.375rem;
+			margin-right: 0.1em;
+		}
+	}
+}
+
+.sidebar__sticky {
+	position: sticky;
+	top: @gutter;
+	.clearfix();
+}

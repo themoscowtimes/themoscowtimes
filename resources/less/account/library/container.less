@@ -1,0 +1,188 @@
+/**
+* Container
+*/
+
+// Set CSS variables par padding
+each(#config.container()[@padding], {
+	#media.query(@key, {
+		:root {
+			--container-padding: @value;
+		}
+	})
+});
+
+each(#config.container()[@gutter], {
+	#media.query(@key, {
+		:root {
+			--container-gutter: @value;
+		}
+	})
+});
+
+#container {
+	.classes() {
+		// Get configured sizes
+		@config: #config.container();
+		@large: @config[large];
+		@medium: @config[medium];
+		@small: @config[small];
+	
+		
+		.container {
+			// Center the colum
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+
+			// Default size is medium
+			max-width: @config[medium];
+			
+			// Set a responsive padding
+			padding-left: var(--container-padding);
+			padding-right: var(--container-padding);
+			
+			
+			position: relative;
+			// z-index: 1; JK: is this nececary
+			&:before, .container:after {
+				content: "";
+				display: table;
+				line-height: 0;
+			}
+
+			&:after {
+				clear: both;
+			}
+
+						
+			&__block {
+				// A container__block in the default (medium) container is outdented
+				&--outdent {
+					// Screen is bigger than large, outdent the block to the large size
+					@media only screen and (min-width: @large){
+						@margin: ~"calc( ( ( @{large} - @{medium}) / -2 ) )";
+						margin-left: @margin;
+						margin-right: @margin;
+					}
+					// Screen is smaller than medium, remove the padding
+					@media only screen and (max-width: @medium){
+						@margin: ~"calc( -1 * var(--container-gutter) )";
+						margin-left: @margin;
+						margin-right: @margin;
+					}
+				}
+			
+				// A container__block in 50% width {
+				&--half {
+					width: ~"calc( 50% - ( 0.5 * var(--container-gutter) ) )";
+
+					@media @xs {
+						width: 100%;
+					}
+				}
+			
+				//ontainer__block float right always use with sized block (--half)
+				&--right {
+					float: right;
+					clear: right;
+					margin-left: ~"calc( 0.5 * var(--container-gutter) )";
+
+					@media @xs {
+						float: none;
+						margin-left: 0;
+						margin-right: 0;
+					}
+				}
+				//ontainer__block float left always use with sized block (--half)
+				&--left {
+					float: left;
+					clear: left;
+					margin-right: ~"calc( 0.5 * var(--container-gutter) )";
+
+					@media @xs {
+						float: none;
+						margin-left: 0;
+						margin-right: 0;
+					}
+				}
+			}
+			
+			
+			&--small {
+				// Small width
+				max-width: @small;
+				
+				// A block in the small container is outdented
+				.container__block--outdent {
+					// Screen is bigger than medium, outdent the block to the medium size
+					@media only screen and (min-width: @medium){
+						@margin: ~"calc( ( ( @{medium} - @{small}) / -2 )  )";
+						margin-left: @margin;
+						margin-right: @margin;
+					}
+					// Screen is smaller than small, remove the padding
+					@media only screen and (max-width: @small){
+						@margin: ~"calc( -1 * var(--container-padding) )";
+						margin-left: @margin;
+						margin-right: @margin;
+					}
+				}
+				
+				// A block in the small container is outdented with a large outdent
+				.container__block--outdent-large {
+					// Screen is bigger than large, outdent the block to the large size
+					@media only screen and (min-width: @large){
+						@margin: ~"calc( ( ( @{large} - @{small}) / -2 ))";
+						margin-left: @margin;
+						margin-right: @margin;
+					}
+					// Screen is bigger than medium, outdent the block to the medium size
+					@media only screen and (min-width: @medium) and (max-width: @large){
+						@margin: ~"calc( ( ( @{medium} - @{small}) / -2 ) )";
+						margin-left: @margin;
+						margin-right: @margin;
+					}
+					// Screen is smaller than small, remove the padding
+					@media only screen and (max-width: @small){
+						@margin: ~"calc( -1 * var(--container-padding) )";
+						margin-left: @margin;
+						margin-right: @margin;
+					}
+				}
+			}
+
+			
+			&--medium {
+				// Medium width
+				max-width: @medium;	
+				
+				// A block in the medium container is outdented
+				.container__block--outdent {
+					// Screen is bigger than large, outdent the block to the large size
+					@media only screen and (min-width: @large){
+						@margin: ~"calc( ( ( @{large} - @{medium}) / -2 ) )";
+						margin-left: @margin;
+						margin-right: @margin;
+					}
+					// Screen is smaller than medium, remove the padding
+					@media only screen and (max-width: @medium){
+						@margin: ~"calc( -1 * var(--container-padding) )";
+						margin-left: @margin;
+						margin-right: @margin;
+					}
+				}
+			}
+
+			
+			&--large {
+				// Large width.
+				max-width: @large;
+			}
+
+			&--full {
+				// Full width
+				max-width: 100%;
+			}
+		}
+	}
+}

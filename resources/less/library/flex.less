@@ -1,0 +1,170 @@
+/* original code PL */
+.flex, .flexbox {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.flex-wrapper() {
+	display: box;
+	display: flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.flex-wrapper {
+	.flex-wrapper();
+}
+
+.flex-align-wrapper(@align-items: stretch) {
+	.flex-wrapper();
+	
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	align-items: @align-items // flex-start | flex-end | center | baseline | stretch*/
+}
+
+.flex-align-wrapper {
+	.flex-align-wrapper();
+}
+
+.flex-order (@order: 1 ){
+	-webkit-order: @order;
+	order: @order;
+}
+
+/* flex-tools code PL */
+.flex-stretch {
+	-webkit-flex: 1 1 auto;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto; // force children of col-flex to stretch, especially for .box-white, but shouldn't conflict.
+	min-height: 1px;
+}
+
+.flex-column {
+	flex-direction: column;
+}
+
+.inline-flex-wrapper{
+	display: -webkit-inline-flex; /* Safari */
+	display: inline-flex;
+	
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+
+
+/* code styling JK */
+.flex(@display: flex) {
+    display: -webkit-box; 
+    display: -moz-box; 
+    display: ~"-webkit-@{display}";
+	display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+	display: ~"-ms-@{display}"; // IE11
+	display: @display;
+}
+
+
+// Flex Flow Direction
+// row | row-reverse | column | column-reverse
+.flex-direction(@direction: row) {
+	-webkit-flex-direction: @direction;
+	-ms-flex-direction: @direction;
+	flex-direction: @direction;
+}
+
+// Flex Line Wrapping
+// nowrap | wrap | wrap-reverse
+.flex-wrap(@wrap: nowrap) {
+	-webkit-flex-wrap: @wrap;
+    -ms-flex-wrap: @wrap;
+    flex-wrap: @wrap;
+}
+
+// Flex Direction and Wrap
+// <flex-direction> || <flex-wrap>
+.flex-flow(@flow) {
+	-webkit-flex-flow: @flow;
+	-ms-flex-flow: @flow;
+	flex-flow: @flow;
+}
+
+// Axis Alignment
+// flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;	
+.justify-content(@justify: flex-start) {
+	-webkit-justify-content: @justify;
+	-ms-justify-content: @justify;
+	justify-content: @justify;
+}
+
+// Cross-axis Alignment
+// stretch | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe;
+.align-items(@align: stretch) {
+	-webkit-align-items: @align;
+	-ms-align-items: @align;
+	align-items: @align;
+}
+
+// Packing Flex Lines
+// flex-start | flex-end | center | space-between | space-around | stretch 
+.align-content(@align: stretch) {
+	-webkit-align-content: @align;
+	-ms-align-content: @align;
+	align-content: @align;
+}
+
+// Display Order
+// <integer>
+.order(@order: 0) {
+	-webkit-order: @order;
+	-ms-order: @order;
+	order: @order;
+}
+
+// Flex grow factor
+// <number>
+.flex-grow(@grow: 0) {
+	-webkit-flex-grow: @grow;
+	-ms-flex-grow: @grow;
+	flex-grow: @grow;
+}
+
+// Flex shrink
+// <number> 
+.flex-shrink(@shrink: 1) {
+	-webkit-flex-shrink: @shrink;
+	-ms-flex-shrink: @shrink;
+	flex-shrink: @shrink;
+}
+
+// Flex basis
+// - the initial main size of the flex item
+// <width> 
+.flex-basis(@width: auto) {
+	-webkit-flex-basis: @width;
+	-ms-flex-basis: @width;
+	flex-basis: @width;
+}
+
+// Cross-axis Alignment
+// auto | flex-start | flex-end | center | baseline | stretch 
+.align-self(@align: auto) {
+	-webkit-align-self: @align;
+	-ms-align-self: @align;
+	align-self: @align;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

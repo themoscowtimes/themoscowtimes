@@ -1,0 +1,141 @@
+.article__images {
+	.clearfix();
+	@media @xs {
+		.full-width-xs ;
+	}
+	
+	
+	
+}
+.slider {
+	
+	
+}
+
+.header__slider {
+	.slider-nav { 
+		font-size: 80px;
+		@media @xs {
+			font-size: 8vw;
+		}
+	}
+}
+
+
+.slider{
+	position: relative;
+	background: #f7f7f7;
+	height: auto;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	
+	
+	.slider__slide {
+		position: absolute;
+		
+	}
+	
+	
+	
+	figcaption {
+		display: block;
+		line-height: 1.2em;
+		color: @color-6;
+		font-size: 0.82rem;
+		font-weight: 300;
+		padding: (@gutter/3) 0px;
+		font-family: @font-family-2;
+		& span:first-child {
+			
+		}
+		@media @xs {
+			padding: (@gutter/3);
+			text-align: left;
+		}
+		
+	}
+	
+	&.slider--fixed-size {
+		padding-bottom: 66%; // init aspect ratio
+		
+		overflow: visible;
+		.slider__slide {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			height: 100%;
+			width: 100%;/*
+			.aligner();
+			.align-items--center();*/
+			background-position: center center;
+			background-size: cover;
+		}
+		.slider__slide-inner {/*
+			.aligner();
+			.aligner-item-center();*/
+			height: 100%;
+			width: 100%;
+			position: relative;
+			text-align: center;
+
+			img {/*
+				.aligner-item-center();	*/
+				max-height: 100%;
+				max-width: 100%;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translateY(-50%) translateX(-50%);
+			}
+		}
+	}
+	
+}
+
+
+
+.slider__nav {
+	height: 100%;
+	font-size: 10px;
+	
+	.slider__previous, .slider__next {
+		position: absolute;
+		text-decoration: none;
+		cursor: pointer;
+		top: 50%;
+		transform: translateY(-50%);
+		color: #000;
+		line-height: 70px;
+		text-align: center;
+		width: 30px;
+		height: 70px;
+		background: rgba(200,200,200,0.5);
+		
+		i.fa {
+			transition: transform 0.2s ease;
+			
+		}
+	}
+	.slider__previous {
+		
+		display: block;
+		left: 0;
+		z-index: 100;
+		&:hover i.fa {
+			transform: translateX(-2px);
+		}
+	}
+	.slider__next {
+		
+		display: block;
+		right: 0;
+		z-index: 100;
+		&:hover i.fa {
+			transform: translateX(2px);
+		}
+	}
+}

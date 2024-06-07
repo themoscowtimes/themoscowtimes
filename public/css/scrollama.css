@@ -1,0 +1,23 @@
+#scrolly {
+	position: relative;
+}
+
+#scrolly .step {
+	display: block;
+	z-index: 0;
+}
+
+#scrolly .figure {
+	position: sticky;
+	left: 0;
+	width: 100%;
+	margin: 0;
+	transform: translate3d(0, 0, 0);
+	z-index: 1;
+}
+
+#scrolly .article_1 {
+	position: relative;
+	padding: 0;
+	margin: 0 auto;
+}

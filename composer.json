@@ -1,0 +1,51 @@
+{
+	"name": "tmt/the-moscow-times",
+	"description": "The Moscow Times main website",
+	"type": "project",
+	"license": "MIT",
+	"authors": [{
+		"name": "Martijn Heijnen",
+		"email": "martijn@yuna.nl",
+		"homepage": "http://www.yuna.nl",
+		"role": "Developer"
+	}],
+	"require": {
+		"php": ">=7.0",
+		"sulfur/framework": "~1.0.0",
+		"sulfur/components": "~1.0.0",
+		"sulfur/manager": "~1.0.0",
+		"sulfur/yellow": "~1.0.0",
+		"robmorgan/phinx": "^0.10",
+		"sphinx/client": "dev-master",
+		"sendpulse/rest-api": "^1.0",
+		"mollie/mollie-api-php": "^2.0",
+		"drewm/mailchimp-api": "^2.5.4",
+		"lcobucci/jwt": "~3.3.1",
+		"defuse/php-encryption": "2.3.1",
+		"guzzlehttp/guzzle": "6.5.8",
+		"psr/container": "<=1.1.1",
+		"irazasyed/telegram-bot-sdk": "^3.8",
+		"stichoza/google-translate-php": "^4.1",
+		"mpdf/mpdf": "^8.2"
+	},
+	"require-dev": {
+		"oyejorge/less.php": "^1.7"
+	},
+
+	"autoload": {
+		"files": [],
+		"psr-4": {
+			"": "app/"
+		}
+	},
+	"extra": {
+		"yellow": {
+			"dir": "public/vendor/yellow/"
+		}
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"Sulfur\\Yellow\\Installer::install"
+		]
+	}
+}

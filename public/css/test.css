@@ -1,0 +1,132 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 20, 2018, 4:18:58 PM
+    Author     : jurjen
+*/
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400,500,600|Montserrat:700,800');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Libre+Franklin:400,700,800');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,800,900');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,800,900|Rubik:700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Chivo:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800');
+@import url('https://fonts.googleapis.com/css?family=Barlow:400,600,700,800');
+
+
+
+
+
+*  {
+	  font-family: 'Merriweather', sans-serif;
+	font-weight: 400;
+
+}
+.py-2 {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+body.home .nav-top {
+    border-bottom: 3px solid #212121;
+    margin-bottom: 64px;
+}
+
+
+.cluster--section-today {
+	margin-top: -34px;
+}
+
+.cluster--section-today:before {
+	content: 'Today';
+	position: releative;
+	z-index: 1000;
+	font-family: 'barlow', sans-serif;
+    color: #212121;
+    ext-transform: uppercase;
+    font-weight: 700;
+	font-size: 26px;
+    line-height: 1em;
+    padding: 0 0 18px 0;
+    display: block;
+
+}
+.cluster .cluster__label, .header--style-3 {
+	font-family: 'barlow', sans-serif;
+    color: #212121;
+    text-transform: none;
+    font-weight: 500;
+	font-size: 26px;
+}
+
+.article-excerpt-default__label, .article-excerpt-default__author {
+	
+    font-weight: 600;
+    color: #ed1845;
+    margin-bottom: 10px;
+	margin-top:4px;
+	text-transform: none;
+	font-size: 15px;
+		font-family: 'Barlow', sans-serif;
+}
+
+.article-excerpt-default__type-icon {
+    right: 0;
+	left: auto;
+	bottom: 0;
+    background-color: black;
+}
+
+
+.label--opinion {
+	background-color: #ed1845;
+}
+
+.article-excerpt-default__headline {
+	font-family: 'Barlow', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 28px;
+}
+
+.col-8 .article-excerpt-default__headline {
+	font-size: 38px;
+	line-height: 40px;
+}
+
+
+.article-excerpt-default__teaser {
+	margin-top: 10px;
+    line-height: 26px;
+    font-weight: 400;
+	color: #212121;
+}
+
+
+/*-------------------------------*/
+.article-excerpt-tiny__time {
+	font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: gray;
+    margin-bottom: 10px;
+	margin-top:4px;
+	text-transform: none;
+	font-size: 14px;
+}
+
+.article-excerpt-tiny__headline {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 22px;
+}
+
+
+/*---------------------------------------*/
+.container--full {
+	text-align: center;
+}

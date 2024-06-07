@@ -1,0 +1,83 @@
+.list {
+	
+}
+
+.list-filter {
+	font-family: @font-family-2;
+	h4 {
+		text-transform: uppercase;
+		font-weight: @bold;
+		font-size: 0.9rem;
+	}
+	.list__section{
+		margin-bottom: @gutter;
+	}
+	
+	@media @sm-up {
+		width: 280px;
+	}
+	background-color: #f7f7f7;
+	.p-2();
+	
+	:not([class*="mce-"]) > input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), 
+	:not([class*="mce-"]) > select, 
+	:not([class*="mce-"]) > textarea {
+		width: 100%;
+		background: #fff;
+		
+		border: 1px solid @color-7;
+		color: @color-8;
+
+		padding: 0.2em 0.4em;
+	}
+
+	:not([class*="mce-"]) > textarea {
+		height: 8em;
+	}
+	
+	
+	.datepicker {
+		border: 1px solid @color-7;
+		background: #fff;
+		padding: (@gutter/4);
+		text-align: center;
+		font-size: 0.9rem;
+		font-weight: @medium;
+		
+		&__table {
+			width: 100%;
+			display: table;
+			table-layout: fixed;
+			thead{
+				
+				color: @color-6;
+				font-weight: @bold;
+			}
+			tr {
+				
+			}
+			th, td {
+				height: 100%;
+				line-height: 2.5em;
+				span {
+					display: inline-block;
+					width: 100%;
+					height: 100%;
+					
+				}
+				span.clickable {
+					&:hover {
+						background-color: @color-7;
+						
+						
+					}
+				}
+				span.active {
+					background-color: @color-7;
+					//.border-radius(100%);
+				}
+			}
+		}
+	}
+	
+}

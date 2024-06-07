@@ -1,0 +1,137 @@
+@header-min-height: 600px;
+@header-visual-width: 50%;
+@header-gutter: 20px;
+
+.header {
+	background-color: @color-1;
+	position: relative;
+	
+	@media @md-up {
+		height: 100vh;
+	}
+	
+}
+
+//header styles
+.header--style-1 {
+	font-family: @font-family-2;
+	font-weight: 900;
+	font-size: 3.5rem;
+	line-height: 1em;
+	margin-bottom: (@gutter/2);
+	@media @md-down {
+		font-size: 2.5rem;
+	}
+	@media @sm {
+		
+	}
+	@media @xs {
+		font-size: 2rem;
+	}
+}
+
+.header--style-2 {
+	font-family: @font-family-3;
+	font-weight: 400;
+	font-size: 1.68rem;
+	line-height: 1.2em;
+	@media @md-down {
+		font-size: 1.5rem;
+	}
+	@media @xs {
+		font-size: 1.3rem;
+	}
+}
+
+.header--style-3 {
+	
+	.font-family-2();
+	color: @color-8;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 1.1rem;
+	line-height: 1em;
+}
+
+.header--style-4 {
+	.font-family-2();
+	font-weight: 700;
+	font-size: 1.2rem;
+	line-height: 1.2em;
+}
+
+.header--style-5 {
+	.font-family-2;
+	font-size: 1rem;
+	font-weight: @medium;
+	line-height: 135%;
+}
+
+.header--living {
+	letter-spacing: 0.3em;
+	padding: 10px;
+	border: 6px solid #000;
+	display: inline-block;
+}
+
+.header__content {
+	padding-top: @gutter;
+	padding-bottom: (@gutter*2);
+	h1 {
+		font-weight: 700;
+	}
+	@media @md-up {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+.header__bottom {
+	position: absolute;
+	bottom: 0;
+	width: 100%;	
+	.navigate-down {
+		text-align: center;
+		 -webkit-animation: jump 1.5s ease 0s infinite normal ;
+		animation: jump 1.5s ease 0s infinite normal ;
+		img {
+			height: 55px;	
+			margin-bottom: @gutter;
+		}
+	}
+}
+
+//@visual-addded-width: @container-width / 2 - (@container-width/4)-(@gutter-width/2);
+@visual-addded-width: (@container-width / 2 ) - (@container-width*5/12) - (@gutter-width*3);
+@visual-addded-width-md: (@container-width / 2) - (@container-width*6/12) - (@gutter-width*3);	
+
+.header__visual {
+	position: relative;
+	@media @md-up {
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+		
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	
+	left: calc(~'50% - '@visual-addded-width);
+	
+	@media @md {
+		left: calc(~'50% - '@visual-addded-width-md);
+	}
+	
+	@media @sm-down {
+		position: relative;
+		height: 50vh;
+		left: 0;
+	}
+}

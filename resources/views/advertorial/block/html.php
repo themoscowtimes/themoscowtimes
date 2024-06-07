@@ -1,0 +1,1 @@
+<?php view::raw($block['body']) ?>

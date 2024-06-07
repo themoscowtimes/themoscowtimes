@@ -1,0 +1,32 @@
+#media {
+	.query(@name, @code) {
+		@media #media.media()[$@name] {
+			@code();
+		}
+	};
+	
+	
+	.media {
+		@breakpoint: #config.media();
+		@ceiling: {
+			lg: @breakpoint[xl] - 1;
+			md: @breakpoint[lg] - 1;
+			sm: @breakpoint[md] - 1;
+			xs: @breakpoint[sm] - 1;
+		}
+	
+		xl: ~'(min-width:'@breakpoint[xl]~')';
+		lg: ~'(min-width:'@breakpoint[lg]~') and (max-width:'@ceiling[lg]~')';
+		md: ~'(min-width:'@breakpoint[md]~') and (max-width:'@ceiling[md]~')';
+		sm: ~'(min-width:'@breakpoint[sm]~') and (max-width:'@ceiling[sm]~')';
+		xs: ~'(max-width:'@ceiling[xs]~')';
+
+		lg-down: ~'(max-width:'@ceiling[lg]~')';
+		md-down: ~'(max-width:'@ceiling[md]~')';
+		sm-down: ~'(max-width:'@ceiling[sm]~')';
+
+		lg-up: ~'(min-width:'@breakpoint[lg]~')';
+		md-up: ~'(min-width:'@breakpoint[md]~')';
+		sm-up: ~'(min-width:'@breakpoint[sm]~')';
+	};
+}

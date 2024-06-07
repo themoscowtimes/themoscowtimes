@@ -1,0 +1,103 @@
+.issue-excerpt-default {
+	padding: @gutter (@gutter*2) (@gutter/2) (@gutter*2);
+	background-color: #f7f7f7;
+	text-align: center;
+	&__cover {
+		box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.3);
+		margin-bottom: (@gutter/2)
+	}
+	&__title {
+		font-size: 0.9rem;
+	}
+}
+
+
+
+
+.issue-excerpt-extended {
+	
+	
+	background-color: #f7f7f7;
+	text-align: left;
+	border-bottom: 3px solid @color-1;
+	margin-bottom: -3px;
+	_height: 100%;
+	_padding-bottom: 85px; // actions height + margin
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex: auto;
+	
+	&__link {
+		display: block;
+		
+		
+	}
+	&__padding {
+		padding: @gutter @gutter 0 @gutter;	
+		@media @sm-down {
+			padding: (@gutter/2) (@gutter/2) 0 (@gutter/2);		
+		}
+		
+	}
+	&__cover {
+		box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.3);
+		
+		line-height: 0;
+		margin-bottom: @gutter;
+		margin-top: (@gutter/6);
+		@media @xs {
+			margin-bottom: (@gutter/2);
+		}
+		
+	}
+	&__number {
+		.header--style-3;
+		font-size: 1.2rem;
+		@media @md-down {
+			font-size: 1rem;
+		}
+	}
+	&__title {
+		color: @color-3;
+		text-transform: uppercase;
+		font-family: @font-family-2;
+		font-weight: 300;
+		font-size: 0.85rem;
+		@media @md-down {
+			font-size: 0.8rem;	
+		}
+	}
+	
+	&__actions {
+		display: block;
+	
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		flex: auto;
+			
+	}
+	
+	&__action {
+		border-top: 1px solid @color-1;
+
+		padding: (@gutter/4) @gutter;
+		font-size: 0.75rem;
+		font-family: @font-family-2;
+		font-weight: 500;
+		text-transform: uppercase;
+		display: block;
+		width: 100%;
+		@media @md-down {
+			padding: (@gutter/6) (@gutter/2);
+		}
+	}
+	
+	&__intro {
+		font-weight: 300;
+		font-size: 0.8rem;
+		line-height: 1.7em;
+		margin-bottom: @gutter;
+	}
+}

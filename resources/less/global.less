@@ -1,0 +1,139 @@
+
+.listed-articles__item {
+	margin-bottom: (@gutter/4);
+	padding-bottom: (@gutter/3);
+	border-bottom: 1px solid @color-7;
+	&:last-child{
+		border-bottom: 0;
+	}
+}
+
+.seperator {
+	border-top: 6px solid @color-7;
+}
+
+.clusterspacer--vertical {
+	display: block;
+	height: (@gutter*1.5);
+}
+
+@container-padding-xs: (@gutter/2);
+@container-padding-sm: (@gutter/2);
+
+.container {
+	max-width: @container-width;
+	padding-left: @gutter;
+	padding-right: @gutter;
+	
+	
+	@media @md-down {
+		padding-left: @container-padding-sm;
+		padding-right: @container-padding-sm;
+	}
+	
+	@media @xs {
+		padding-left: @container-padding-xs;
+		padding-right: @container-padding-xs;
+	}
+	
+	&--wide {
+		max-width: @container-wide-width;	
+	}
+	
+	&--full {
+		max-width: 100%;	
+	}
+	
+	&--medium {
+		max-width: @container-medium-width;	
+	}
+	
+	&--small {
+		max-width: @container-small-width;		
+	}
+	
+	
+}
+
+
+
+.full-width {
+	margin-left: -@container-padding-xs;
+	margin-right: -@container-padding-xs;
+}
+
+
+.full-width-xs {
+	@media @xs {
+		margin-left: -@container-padding-xs;
+		margin-right: -@container-padding-xs;
+	}
+}
+.full-width-sm {
+	@media @sm {
+		margin-left: -@container-padding-xs;
+		margin-right: -@container-padding-xs;
+	}
+}
+.full-width-sm-down {
+	@media @sm-down {
+		margin-left: -@container-padding-xs;
+		margin-right: -@container-padding-xs;
+	}
+}
+
+.full-width-md {
+	@media @md {
+		margin-left: -@container-padding-xs;
+		margin-right: -@container-padding-xs;
+	}
+}
+.full-width-md-down {
+	@media @md-down {
+		margin-left: -@container-padding-xs;
+		margin-right: -@container-padding-xs;
+	}
+}
+
+.full-width-lg {
+	@media @lg {
+		margin-left: -@container-padding-xs;
+		margin-right: -@container-padding-xs;
+	}
+}
+.full-width-lg-down {
+	@media @lg-down {
+		margin-left: -@container-padding-xs;
+		margin-right: -@container-padding-xs;
+	}
+}
+
+
+.manager-edit {
+	position: fixed; 
+	left: 0; 
+	top: 0; 
+	font-size: 13px; 
+	
+	text-align: center;
+	padding: 5px;	
+	display: inline-block;
+	background: rgba(200,200,200,0.5);
+	&__icon {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	&__text {
+		display: none;
+	}
+	&:hover {
+		.manager-edit__text {
+			display: inline-block;
+		}
+	}
+	@media @xs {
+		top: auto;
+		bottom: 0;
+	}
+}
+

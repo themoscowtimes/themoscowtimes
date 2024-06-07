@@ -1,0 +1,69 @@
+.identity {
+	@color-primary: @color-3;
+	@color-light: #fff;
+	@color-border: @color-7;
+	@color-shadow: fade( @color-1, 40%);
+	
+	
+	position: relative;
+	
+	&__signin {
+		font-size: 32px;
+		@media @xs {
+			font-size: 24px;
+		}
+	}
+	
+	&__account {
+		background: @color-primary;
+		color: @color-light;
+		border-radius: 50%;
+		width: 46px;
+		height: 46px;
+		text-align: center;
+		line-height: 46px;
+		.font-family-2;
+		font-size: 20px;
+		font-weight: 400;
+		cursor: pointer;
+		@media @xs {
+			width: 26px;
+			height: 26px;
+			line-height: 26px;
+			font-size: 14px;
+		}
+	}
+	
+	&__menu {
+		position: absolute;
+		top: calc(100% + @gutter/2);
+		right: 0;
+		width: max-content;
+		padding: 0 (@gutter/2);
+		background: @color-light;
+		box-shadow: 0 0 8px 0 @color-shadow;
+		z-index: 2;
+		@media @xs {
+			top: calc(100% + @gutter/2);
+			right: (@gutter/-2);
+		}
+		
+		&__item {
+			text-align: right;
+			display: block;
+			text-transform: uppercase;
+			.font-family-2;
+			font-weight: 600;
+			font-size: 14px;
+			border-top: 3px solid @color-border;
+			@media @xs {
+				line-height: 46px;
+			}
+			&:first-child {
+				border-top:  none;
+			}
+		}
+	}
+	
+	
+}

@@ -1,0 +1,98 @@
+.wysiwyg {
+	@color-link: lighten(@color-2, 41%);
+	
+	#text.bodytext(1);
+	
+	p {
+		#margin.bottom(4);
+	}
+	
+	h3 {
+		#text.heading-3();
+		#margin.bottom(1);
+	}
+		
+	ul, ol {
+		#margin.bottom(3);
+		#margin.top(3);
+		margin-left: 2em;
+		li {
+			#padding.left(2);
+			#margin.bottom(2);
+			line-height: 1.6em;
+		}
+	}
+	
+	ul {
+		list-style: disc;	
+	}
+	
+	ol {
+		list-style: decimal;	
+	}
+	
+	cite {
+		font-style: italic;
+	}
+	
+	strong {
+		font-weight: 700;
+	}
+	
+	em {
+		font-style: italic;
+	}
+	.underline {
+		text-decoration: underline;
+	}
+	
+	a:not(.button) {
+		background: transparent;
+		border-bottom: 3px solid @color-link;
+		color: inherit;
+		text-decoration: none;
+		transition: border-bottom 0.25s;
+		overflow-wrap: break-word;
+		white-space: normal;
+		&:hover {
+			border-bottom: 3px solid @color-2;
+		}
+	}
+	
+	table {
+		line-height: 175%;
+		margin-bottom: 20px;
+		tr {
+			border-bottom: 1px solid @color-4;
+			&:last-child {
+				border-bottom: 3px solid @color-4;
+			}
+		}
+
+	}
+	
+	// for on dark backgrounds align-content: 
+	&--inverted {
+		color: #fff;		
+	}
+	// alternativestyle on job page
+	&--job {
+		ul li {
+			position: relative;
+			list-style-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAAEhyb7BAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMJJREFUeNpi/P//PwMMMIEIRkZGBAcGAAKIEVkZKgAIIOxSUEEJZD5AAGGoZGIgAFDMQNH7HMYACCA8LiPBImQ343QISJ4JzQ0SSA5jhEkABBD13EQ9Rfh81w/E5WB5HIr6oRglCNajKQCBQnTrNID4OrIJKPJI1mmgK4ApAggwogKTesFET4PA/iPTe+WgxAfTT46L+qEpF5SCX5DjtX60pF+IK4w0oHnlOnKBQMgAfGEEM/A91IB+osIYT2BLkBJZADMOdkOo7RpGAAAAAElFTkSuQmCC');
+		}
+	}
+	// if on dark background and Job
+	&--job&--inverted {
+		ul li {
+			list-style-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAAEhyb7BAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMNJREFUeNpi/P//PwMMMDEgARQOQAAxwpQxYUgDBBAjsgnoshLIggABhKGSCZc2GPjPhGQGSC8jA8gMIH4OpRkAAgir9YTMJVnRf2yKnkMdB5NkhEkABBB93EQ9Rf1AXI7P4f1QuhDZpPW4FCCbpAFVuANdASRYoZEIxBpA3I/Eh2OAACMqMKkWTEPGoHLk3EWOQf3QlAsy5AU5BvWjJf1CXF7TgOaV62gFAl4DsKUR5LQCKgDe/4cArOmGlHSEEgaEAABmyJTjAehjjQAAAABJRU5ErkJggg==');
+		}
+	}
+	
+	
+}
+
+	
+	
+	
+	

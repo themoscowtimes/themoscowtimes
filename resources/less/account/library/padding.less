@@ -1,0 +1,105 @@
+/**
+* Paddings
+*/
+
+// Set CSS variables
+each(#config.padding()[@media], {
+	#media.query(@key, {
+		:root {
+			--padding: @value;
+		}
+	})
+});
+
+#padding {
+	// Generate helper classes
+	.classes() {
+		each(#config.padding()[@size], {
+			.p-@{key} { #padding(@key) }
+			.pt-@{key} { #padding.top(@key) }
+			.pr-@{key} { #padding.right(@key) }
+			.pb-@{key} { #padding.bottom(@key) }
+			.pl-@{key} { #padding.left(@key) }
+			.px-@{key} { #padding.x(@key) }
+			.py-@{key} { #padding.y(@key) }
+		});
+		.p { #padding() }
+		.pt { #padding.top() }
+		.pr { #padding.right() }
+		.pb { #padding.bottom() }
+		.pl { #padding.left() }
+		.px { #padding.x() }
+		.py { #padding.y() }
+	}
+	
+	// Mixins
+	.top(@size) {
+		@value: #config.padding()[@size][$@size];
+		padding-top: calc( var(--padding) * @value);
+	}
+	.right(@size) {
+		@value: #config.padding()[@size][$@size];
+		padding-right: calc( var(--padding) * @value);
+	}
+	.bottom(@size) {
+		@value: #config.padding()[@size][$@size];
+		padding-bottom: calc( var(--padding) * @value);
+	}
+	.left(@size) {
+		@value: #config.padding()[@size][$@size];
+		padding-left: calc( var(--padding) * @value);
+	}
+	.x(@size) {
+		@value: #config.padding()[@size][$@size];
+		padding-left: calc( var(--padding) * @value);
+		padding-right: calc( var(--padding) * @value);
+	}
+	.y(@size) {
+		@value: #config.padding()[@size][$@size];
+		padding-top: calc( var(--padding) * @value);
+		padding-bottom: calc( var(--padding) * @value);
+	}
+	.top() {
+		@value: #config.padding()[default];
+		padding-top: calc( var(--padding) * @value);
+	}
+	.right() {
+		@value: #config.padding()[default];
+		padding-right: calc( var(--padding) * @value);
+	}
+	.bottom() {
+		@value: #config.padding()[default];
+		padding-bottom: calc( var(--padding) * @value);
+	}
+	.left() {
+		@value: #config.padding()[default];
+		padding-left: calc( var(--padding) * @value);
+	}
+	.x() {
+		@value: #config.padding()[default];
+		padding-left: calc( var(--padding) * @value);
+		padding-right: calc( var(--padding) * @value);
+	}
+	.y() {
+		@value: #config.padding()[default];
+		padding-top: calc( var(--padding) * @value);
+		padding-bottom: calc( var(--padding) * @value);
+	}
+}
+
+// Mixin for all paddings
+#padding(@size) {
+	@value: #config.padding()[@size][$@size];
+	padding-top: calc( var(--padding) * @value);
+	padding-right: calc( var(--padding) * @value);
+	padding-bottom: calc( var(--padding) * @value);
+	padding-left: calc( var(--padding) * @value);
+}
+
+#padding() {
+	@value: #config.padding()[default];
+	padding-top: calc( var(--padding) * @value);
+	padding-right: calc( var(--padding) * @value);
+	padding-bottom: calc( var(--padding) * @value);
+	padding-left: calc( var(--padding) * @value);
+}

@@ -1,0 +1,65 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 26, 2019, 10:59:25 AM
+    Author     : Patrick
+*/
+
+.contribute-bar {
+	background-color: #f8e400;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	.py-3;
+	z-index: 99991;
+	-webkit-transition: -webkit-transform 0.2s ease;
+	transition: -webkit-transform 0.2s ease;
+	transition: transform 0.2s ease;
+	transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+	-webkit-transform: translateY(100%);
+	        transform: translateY(100%);
+}
+
+.contribute-bar--show {
+	-webkit-transform: translateY(0);
+	        transform: translateY(0);
+}
+
+.contribute-bar__content-container {
+	@media @lg-up {
+		margin-left: @article-outside--width + @gutter;	
+	}
+	
+}
+
+.contribute-bar__header {
+	margin-bottom: (@gutter/2);
+}
+
+.contribute-bar__content {
+	
+	font-size: 0.85rem;
+	line-height: 1.4em;
+	
+	@media @lg-up {
+		padding-left: (@gutter/2);
+		border-left: 3px solid #000;
+	}
+	
+	p {
+		margin-bottom: (@gutter/2);
+	}
+	.button {
+		padding-top: 0.6em;
+		padding-bottom: 0.6em;
+		font-weight: 500;
+		&--later {
+			color: #000;
+			background-color: #fff;
+		}
+	}
+}

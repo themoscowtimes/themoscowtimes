@@ -1,0 +1,52 @@
+:not([class*="mce-"], .flatpickr-calendar *) > input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), 
+:not([class*="mce-"], .flatpickr-calendar *) > select, 
+:not([class*="mce-"]) > textarea {
+	width: 100%;
+	background: #fff;
+	border: 1px solid @color-7;
+	color: @color-6;
+	padding: 0.6em;
+}
+
+:not([class*="mce-"]) > textarea {
+	height: 8em;
+}
+
+form {
+	margin-top: 2em;
+	.font-family-1();
+}
+
+form {
+	button, input[type=submit] {
+		.button();
+		.button--color-3();
+		
+	}
+}
+
+.form__label {
+	.header--style-3();
+	
+	& em {
+		font-size: 0.9rem;
+		font-weight: @normal;
+		font-style: normal;
+	}
+}
+
+.form__error {
+	.header--style-3();
+	color: red;
+}
+
+.input-wrapper {
+	margin-top:20px;
+}
+
+.input-flatpickr {
+	background-image: url("data:image/svg+xml,<svg width='48' viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'><path d='M9 44q-1.2 0-2.1-.9Q6 42.2 6 41V10q0-1.2.9-2.1Q7.8 7 9 7h3.25V4h3.25v3h17V4h3.25v3H39q1.2 0 2.1.9.9.9.9 2.1v31q0 1.2-.9 2.1-.9.9-2.1.9Zm0-3h30V19.5H9V41Zm0-24.5h30V10H9Zm0 0V10v6.5Z' /></svg>") !important;
+    background-position: top 50% right 8px !important;
+    background-repeat: no-repeat !important;
+    background-size: 24px !important;
+}

@@ -1,0 +1,146 @@
+
+
+.author-excerpt-default {
+	background-color: #f7f7f7;
+	
+	padding: @gutter;
+	border-bottom: 1px solid @color-7;
+	position: relative;
+	.clearfix();
+	
+	@media @xs {
+		padding: (@gutter/2);
+	}
+	a {
+		display: block;
+	}
+	&__image-wrapper{
+		display: table-cell;
+	}
+	img {
+		margin-bottom: (@gutter/4);
+		width: 120px;
+		height: 120px;
+		display: block;
+		.border-radius(100%);
+		overflow: hidden;
+		float: left;
+		margin-right: (@gutter/2);
+		max-width: initial;
+		object-fit: cover;
+		@media @xs {
+			width: 60px;
+			height: 60px;
+		}
+
+	}
+	&__content {
+		display: table-cell;
+		
+		
+	}
+	&__name {
+		font-family: @font-family-2;
+		line-height: 1.4em;
+		font-weight: 700;
+		display: block;
+		margin-bottom: 0.5em;
+	}
+	&__description {
+		font-size: 0.8rem;
+		line-height: 1.7em;
+		display: block;
+	}
+	&__twitter,
+	&__email
+	{
+		display: inline-block;
+		clear: both;
+		font-family: @font-family-3;
+		margin-top: 0.5em;
+		font-size: 0.8rem;
+		color: lighten(@color-1, 40%);
+		&:hover {
+			color: @color-1;
+			color: @color-twitter;
+		}
+		i.fa {
+			color: @color-twitter;
+			font-size: 1.6em;
+			transform: translateY(18%);
+		}
+	}
+	&__email {
+		&:hover {
+			color: #000;
+		}
+		i.fa {
+			color: #000;
+			font-size: 1.5em;
+		}
+		
+	}
+	
+}
+
+
+
+.author-excerpt-small {
+	background-color: #f7f7f7;
+	
+	padding: @gutter;
+	border-bottom: 1px solid @color-7;
+	position: relative;
+	@media @xs {
+		padding: (@gutter/2);
+	}
+	.clearfix();
+	
+	a {
+		display: block;
+	}
+	&__image-wrapper{
+		
+	}
+	img {
+		width: 120px;
+		height: 120px;
+		display: block;
+		.border-radius(100%);
+		overflow: hidden;
+		float: left;
+		max-width: initial;
+		object-fit: cover;
+	}
+	&__content {
+		display: table-cell;
+		
+	}
+	&__name {
+		font-weight: 700;
+		display: block;
+		margin-bottom: 0.5em;
+	}
+	&__description {
+		font-size: 0.8rem;
+		line-height: 1.7em;
+		display: block;
+	}
+	&__twitter {
+		display: inline-block;
+		clear: both;
+		font-family: @font-family-3;
+		margin-top: 0.5em;
+		font-size: 0.8rem;
+		color: lighten(@color-1, 40%);
+		&:hover {
+			color: @color-1;
+			color: @color-twitter;
+		}
+		i.fa {
+			color: @color-twitter;
+			font-size: 1.6em;
+			transform: translateY(18%);
+		}
+	}
+}

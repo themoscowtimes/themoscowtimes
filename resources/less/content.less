@@ -1,0 +1,122 @@
+// wordpress / project specific styling.
+
+.wp-video {
+	height: 0 !important;
+	padding-bottom: calc(~"9/16*100%");
+	position: relative;
+	width: 100% !important;
+	margin-bottom: 1em;
+	video {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+.content {
+	h2 {
+		margin-bottom: 0.55em;
+	}
+
+	header h2 {
+		&:after {
+			content: "";
+			display: block;
+			width: 100px;
+			height: 3px;
+			margin-top: 0.2em;
+
+			background: @color-1;
+		}
+	}
+
+	h3 {
+		font-size: 1.5rem;
+		margin-bottom: 0.2em;
+		margin-top: 0.2em;
+		.font-family-2;
+		font-weight: @bold;
+		@media @xs {
+			font-size: 1.2rem;
+		}
+	}
+
+	blockquote {
+		padding-left: @gutter-width;
+		border-left: 1px solid @color-text-1;
+	}
+
+	aside.aside {
+		margin-bottom: @gutter-width;
+
+		a {
+			color: inherit;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		.widget {
+			background: @color-background-2;
+			margin-bottom: @gutter-width;
+			padding: @gutter-width;
+		}
+	}
+}
+
+// gallery
+.gallery-item {
+	float: left;
+	padding: 1%;
+	img {
+		width: 100%;
+	}
+}
+
+.gallery-columns-2 {
+	.gallery-item {
+		width: 50%;
+	}
+}
+
+.gallery-columns-7 {
+	.gallery-item {
+		width: 14%;
+	}
+}
+
+form.wpcf7-form {
+	:not([class*="mce-"])
+		> input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+	:not([class*="mce-"]) > select,
+	:not([class*="mce-"]) > textarea {
+		margin-bottom: 0;
+		&.wpcf7-not-valid {
+			border-color: @color-5;
+		}
+	}
+}
+
+.wpcf7-form-control-wrap {
+	margin-bottom: @gutter-width;
+	display: block;
+}
+
+span.wpcf7-not-valid-tip {
+	color: @color-5;
+}
+
+div.wpcf7-response-output {
+	color: @color-1;
+	border: none;
+	padding: 0;
+	margin: 1em 0;
+}
+
+p.intro {
+	font-size: 1.2rem;
+}

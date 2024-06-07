@@ -1,0 +1,80 @@
+.location-excerpt-default {
+	&__headline {
+		.header--style-4();		
+	}
+	
+}
+
+
+.location-excerpt-default__image {
+	
+	img {
+		width: 120px;
+		height: 120px;
+		object-fit: cover; // vervangen, of plaatje vierkant plaatsen
+	}
+}
+
+.location-excerpt-default__image {
+	
+}
+
+
+.location-excerpt-tiny {
+	
+	
+	
+}
+
+.location-excerpt-tiny__header {
+	margin-bottom: @cluster__label__padding;
+}
+
+
+.location-excerpt-tiny__item {
+	position: relative;
+	display: table;
+	margin-bottom: (@gutter/4);
+	.clearfix();
+	
+
+	
+	
+}
+
+.location-excerpt-tiny__visual {
+	display: table-cell;
+	vertical-align: middle;
+
+	line-height: 0;
+	color: #fff;
+	width: 65px;
+	height: 65px;
+	img {
+		margin: 0;
+		line-height: 0;
+	}
+}
+
+.location-excerpt-tiny__time {
+	.font-family-2;
+	color: @color-3;
+	display: block;
+	text-transform: uppercase;
+}
+
+.location-excerpt-tiny__headline {
+	display: table-cell;
+	vertical-align: middle;
+	.font-family-3;
+	font-size: 0.9rem;
+	font-weight: 400;
+	line-height: 135%;
+	padding-left: (@gutter/2);
+}
+.location-excerpt-tiny__flag {
+	.font-family-2;
+	color: @color-6;
+	
+	text-transform: uppercase;
+}

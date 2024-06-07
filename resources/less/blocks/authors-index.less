@@ -1,0 +1,30 @@
+.authors-index {
+	display: block;
+	&__nav {
+		margin-bottom: @gutter;
+		width: 25%!important;
+		@media @xs {
+			width: 100%!important;
+		}
+	}
+	&__list {
+		// display: grid;
+		// grid-template-columns: repeat(4, 1fr);
+		columns: 4;
+		@media @sm {
+			// grid-template-columns: repeat(2, 1fr);
+			columns: 2;
+		}
+		@media @xs {
+			// grid-template-columns: 1fr;
+			columns: unset;
+		}
+		margin-bottom: @gutter;
+		a {
+			color: @color-3;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}

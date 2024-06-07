@@ -1,0 +1,1 @@
+<div y-use="ProgressBar" class="progress-bar"></div>

@@ -1,0 +1,242 @@
+/* Variables */
+
+
+
+.container {
+	max-width: 1300px; /* Default, will be overridden (responsive) */
+	in-width: 980px; /* Default, will be overridden (responsive) */
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	padding-left: (@gutter-width*2);
+	padding-right: (@gutter-width*2);
+	text-align: left; /*
+	-webkit-box-sizing: content-box; 
+	-moz-box-sizing: content-box; 
+	box-sizing: content-box;
+	*/
+	
+}
+
+.container:before, .container:after {
+	content: "";
+	display: table;
+	line-height: 0;
+}
+.container:after {
+	clear: both;
+}
+
+.row-fluid:before, .row-fluid:after {
+	content: "";
+	display: table;
+	line-height: 0;
+}
+.row-fluid:after {
+	clear: both;
+}
+
+.row-fluid {
+
+	margin-left: -(@gutter-width/2);
+	margin-right: -(@gutter-width/2);
+}
+
+
+.row-fluid > [class*="col-"] {
+	display: block;
+	float: left;
+	width: 100%;
+	padding-left: (@gutter-width/2);
+	padding-right: (@gutter-width/2);
+	min-height: 1px;
+}
+
+/* grid fluid */
+@iterations: 12;
+.col-loop (@i) when (@i > 0) {
+    .row-fluid > .col-@{i} {
+		width: calc(~"@{i}/12*100%");
+    }
+    .col-loop(@i - 1);
+}
+.col-loop (@iterations);
+
+	
+
+/*
+Test variable gutter:
+Door de class "gutter-wide" meet te geven aan de row wordt een andere padding op de colommen gegeven. Ook de negatieve marge op de row wordt hierop aangepast
+*/
+
+
+.row-fluid.gutter-0 {
+	margin-left: 0;
+	margin-right: 0;
+	& > [class*="col"] {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.row-fluid.gutter-1{
+	margin-left: -(@gutter/5);
+	margin-right: -(@gutter/5);
+	& > [class*="col"] {
+		padding-left: (@gutter/5);
+		padding-right: (@gutter/5);
+	}
+}
+
+.row-fluid.gutter-2{
+	margin-left: -(@gutter/4);
+	margin-right: -(@gutter/4);
+	& > [class*="col"] {
+		padding-left: (@gutter/4);
+		padding-right: (@gutter/4);
+	}
+}
+
+
+.row-fluid.gutter-3 {
+	margin-left: -(@gutter/2);
+	margin-right: -(@gutter/2);
+	& > [class*="col"] {
+		padding-left: (@gutter/2);
+		padding-right: (@gutter/2);
+	}
+}
+
+
+.row-fluid.gutter-4 {
+	margin-left: -(@gutter*1.5);
+	margin-right: -(@gutter*1.5);
+	& > [class*="col"] {
+		padding-left: (@gutter*1.5);
+		padding-right: (@gutter*1.5);
+	}
+}
+
+.row-fluid.gutter-5 {
+	margin-left: -@gutter;
+	margin-right: -@gutter;
+	& > [class*="col"] {
+		padding-left: @gutter;
+		padding-right: @gutter;
+	}
+}
+
+
+
+/**/
+
+
+
+
+
+
+@media @xs {
+	.row-fluid > [class*="col-"] {
+		display: block;
+		width: 100%;
+	}
+	
+	/* grid fluid */
+	@iterations: 12;
+	.col-loop-xs (@i) when (@i > 0) {
+		.row-fluid > .col-@{i}-xs {
+			width: calc(~"@{i}/12*100%");
+		}
+		.col-loop-xs(@i - 1);
+	}
+	.col-loop-xs (@iterations);
+}
+
+
+@media @sm {
+	/* grid fluid */
+	@iterations: 12;
+	.col-loop-sm (@i) when (@i > 0) {
+		.row-fluid > .col-@{i}-sm {
+			width: calc(~"@{i}/12*100%");
+		}
+		.col-loop-sm(@i - 1);
+	}
+	.col-loop-sm (@iterations);
+}
+
+
+@media @sm-down {
+	/* grid fluid */
+	@iterations: 12;
+	.col-loop-sm-down (@i) when (@i > 0) {
+		.row-fluid > .col-@{i}-sm-down {
+			width: calc(~"@{i}/12*100%");
+		}
+		.col-loop-sm-down(@i - 1);
+	}
+	.col-loop-sm-down (@iterations);
+}
+
+
+@media @sm-up {
+	/* grid fluid */
+	@iterations: 12;
+	.col-loop-sm-up (@i) when (@i > 0) {
+		.row-fluid > .col-@{i}-sm-up {
+			width: calc(~"@{i}/12*100%");
+		}
+		.col-loop-sm-up(@i - 1);
+	}
+	.col-loop-sm-up (@iterations);
+}
+
+
+@media @md {
+	/* grid fluid */
+	@iterations: 12;
+	.col-loop-md (@i) when (@i > 0) {
+		.row-fluid > .col-@{i}-md {
+			width: calc(~"@{i}/12*100%");
+		}
+		.col-loop-md(@i - 1);
+	}
+	.col-loop-md (@iterations);
+}
+
+@media @md-down {
+	/* grid fluid */
+	@iterations: 12;
+	.col-loop-md-down (@i) when (@i > 0) {
+		.row-fluid > .col-@{i}-md-down {
+			width: calc(~"@{i}/12*100%");
+		}
+		.col-loop-md-down(@i - 1);
+	}
+	.col-loop-md-down (@iterations);
+}
+
+@media @md-up {
+	/* grid fluid */
+	@iterations: 12;
+	.col-loop-md-up (@i) when (@i > 0) {
+		.row-fluid > .col-@{i}-md-up {
+			width: calc(~"@{i}/12*100%");
+		}
+		.col-loop-md-up(@i - 1);
+	}
+	.col-loop-md-up (@iterations);
+}
+
+
+@media @lg {
+	/* grid fluid */
+	@iterations: 12;
+	.col-loop-lg (@i) when (@i > 0) {
+		.row-fluid > .col-@{i}-lg {
+			width: calc(~"@{i}/12*100%");
+		}
+		.col-loop-lg(@i - 1);
+	}
+	.col-loop-lg(@iterations);
+}

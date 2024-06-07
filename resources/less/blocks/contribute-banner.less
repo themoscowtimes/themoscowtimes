@@ -1,0 +1,36 @@
+.contribute-banner {
+	@color-background: @color-background-3;
+	@color-primary: @color-14;
+	@color-secondary: @color-3;
+	@color-default: @color-1;
+	@color-light: #fff;
+	
+	background:@color-background;
+	border-top: 3px solid @color-secondary;
+	
+	h4 {
+		font-weight: 700;
+	}
+	
+	p {
+		margin-bottom: 1em;
+	}
+	
+	&__strike {
+		background: @color-primary;
+		display: inline;
+		font-weight: 600;
+		padding: 3px;
+	}
+	
+	&__button {
+		.font-family-2;
+		background:@color-default ;
+		display: inline-block;
+		padding: 5px 10px 5px 10px;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 1em;
+		color: @color-light;
+	}
+}

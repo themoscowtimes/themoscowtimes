@@ -1,0 +1,116 @@
+
+.videoheader {
+	position: relative;
+	.full-width-md-down;
+	@media @md-up {
+		margin-bottom: (@gutter*2);
+	}
+	@media @sm-down {
+		margin-bottom: (@gutter/2);
+	}
+}
+
+
+
+.videoheader__poster {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: #fff;
+	z-index: 1;
+	color: #fff;
+	overflow: hidden;
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.videoheader__poster_content {
+	color: #fff;
+	line-height: 1.2em;
+	position: absolute;
+	bottom: 0;left: 0;
+	right: 0;
+	padding: 2%;
+	padding-right: 10%;
+	padding-left: 12.5%;
+	@media @sm-down {
+		
+	}
+	
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: -150px;
+		right: 0;
+		bottom: 0;
+		
+		z-index: 1;
+		.gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+		@media @sm-down {
+			top: -50px;	
+		}
+		
+	}
+	.videoheader__poster__trigger {
+		font-size: 5rem;
+		float: left;
+		
+		width: 12.5%;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		display: block;
+		position: absolute;
+		z-index: 2;
+		background: url(../img/icon_play.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: contain;
+		height: 85px;
+		top: 50%;
+		transform: translateY(-50%);
+		i.fa {
+			
+		}
+		@media @sm-down {
+			height: 60px
+		}
+		@media @xs {
+			height: 40px;
+		}
+	}
+	.videoheader__poster__heading {
+		z-index: 2;
+		position: relative;
+	}
+	h1 {
+		font-size: 3.5rem;
+		line-height: 1em;
+		font-family: @font-family-2;
+		font-weight: 700;
+		margin-bottom: 0.2em;
+		@media @sm-down {
+			font-size: 1.5rem;
+		}
+	}
+	h2 {
+		font-family: @font-family-3;
+		font-weight: 400;
+		font-size: 1.68rem;
+		line-height: 1.2em;
+		@media @sm-down {
+			font-size: 1rem;
+			
+		}
+		@media @xs {
+			
+		}
+	}
+}

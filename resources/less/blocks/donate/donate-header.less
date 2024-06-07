@@ -1,0 +1,227 @@
+.donate-header {
+	@color-primary: @color-14;
+	@color-default: @color-1;
+
+	background: white;
+	height: 85vh;
+	min-height: 500px;
+	.flex();
+	.flex-direction(column);
+	.justify-content(flex-end);
+	position: relative;
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr;
+		padding: 0 @gutter;
+		align-items: center;
+		min-height: 600px;
+		&__form {
+			margin-right: @gutter;
+			.contribute__amount__option {
+				&.active {
+					background-color: @color-3;
+					color: #fff;
+				}
+			}
+			.input-wrapper:first-of-type,
+			form {
+				margin-top: 0;
+			}
+			.contribute-wrapper {
+				background-color: #f7f7f7;
+			}
+			.contribute-tabs {
+				display: flex;
+				justify-content: space-evenly;
+				&__tab {
+					background-color: #e0e0e0;
+					color: @color-1;
+					width: 100%;
+					padding: (@gutter / 2);
+					&.active {
+						color: #fff;
+						background-color: @color-3;
+					}
+				}
+			}
+		}
+		@media @xs, @sm {
+			padding: 0;
+			grid-template-columns: 1fr;
+			&__form {
+				grid-row: 2;
+				margin: 0;
+			}
+			&__wrap {
+				padding: 0 (@gutter / 2);
+				margin-bottom: (@gutter*2);
+			}
+		}
+	}
+
+	&__wrap {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		@media @md-up {
+			.flex();
+			.flex-direction(column);
+			.justify-content(center);
+		}
+	}
+
+	&__media {
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		&__img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: 50% 50%;
+		}
+	}
+
+	&__title {
+		margin-left: 1em;
+		@media lg-down {
+		}
+		&--maximized {
+			@media @md-up {
+				max-width: 75%;
+			}
+		}
+
+		&__text {
+			.header--style-1;
+			font-size: 3rem;
+			background-color: #fff;
+			-webkit-box-shadow: 1rem 0 0 0 #fff, -1rem 0 0 0 #fff;
+			box-shadow: 1rem 0 0 0 #fff, -1rem 0 0 0 #fff;
+			line-height: 1.2em;
+			display: inline;
+			-webkit-box-decoration-break: clone;
+		}
+		&__subtext {
+			.header--style-2;
+			background-color: #fff;
+			-webkit-box-shadow: 1rem 0 0 0 #fff, -1rem 0 0 0 #fff;
+			box-shadow: 1rem 0 0 0 #fff, -1rem 0 0 0 #fff;
+			line-height: 1.6em;
+			padding: 0.2em 0;
+			display: inline;
+			-webkit-box-decoration-break: clone;
+		}
+		&__paragraph {
+			font-family: @font-family-3;
+			font-weight: 400;
+			font-size: 1.4rem;
+			line-height: 1.6em;
+			padding: 0.2em 0;
+			@media @md-down {
+				display: block;
+				font-size: 1.2rem;
+			}
+			@media @xs {
+				font-size: 1.2rem;
+			}
+			background-color: #fff;
+			-webkit-box-shadow: 1rem 0 0 0 #fff, -1rem 0 0 0 #fff;
+			box-shadow: 1rem 0 0 0 #fff, -1rem 0 0 0 #fff;
+			display: inline;
+			-webkit-box-decoration-break: clone;
+		}
+	}
+
+	&__buttons {
+		.flex();
+		.flex-direction(row);
+		.justify-content(flex-start);
+		padding-top: @gutter;
+	}
+
+	&__button {
+		margin-right: (@gutter / 2);
+		display: inline-block;
+		background: @color-primary;
+		font-family: @font-family-2;
+		font-weight: 700;
+		color: @color-default;
+		font-size: 1em;
+		padding: 1em 1em;
+		line-height: 1em;
+		text-transform: uppercase;
+		text-align: center;
+		@media @md-up {
+			padding: 1.1em;
+			line-height: 1.1em;
+			font-size: 1.1em;
+		}
+	}
+
+	@media @sm-down {
+		min-height: auto;
+		height: auto;
+		.justify-content(flex-start);
+		&__wrap {
+			display: block;
+			position: relative;
+			top: auto;
+			bottom: auto;
+		}
+		&__media {
+			position: relative;
+			height: 50vw;
+		}
+		&__img {
+		}
+		&__title {
+			margin-left: 0;
+		}
+		&__content {
+			padding: @gutter 0;
+		}
+	}
+}
+
+.donate-text {
+	&__form {
+		@media @xs {
+			margin: 0 -(@gutter/2);
+		}
+		.contribute__amount__option {
+			&.active {
+				background-color: @color-3;
+				color: #fff;
+			}
+		}
+		.input-wrapper:first-of-type,
+		form {
+			margin-top: 0;
+		}
+		.contribute-wrapper {
+			background-color: #f7f7f7;
+		}
+		.contribute-tabs {
+			display: flex;
+			justify-content: space-evenly;
+			&__tab {
+				background-color: #e0e0e0;
+				color: @color-1;
+				width: 100%;
+				padding: (@gutter / 2);
+				&.active {
+					color: #fff;
+					background-color: @color-3;
+				}
+			}
+		}
+	}
+}

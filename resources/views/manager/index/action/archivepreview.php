@@ -1,0 +1,1 @@
+<a y-use="manager.index.Preview" data-url="<?php view::url('archivepreview') ?>" data-data="{% var data = JSON.stringify(item.data) %}{{ data }}">Preview</a>

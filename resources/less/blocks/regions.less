@@ -1,0 +1,39 @@
+.regions-map {
+	margin-bottom: @gutter;
+	position: relative;
+	&__key {
+		font-family: 'Roboto';
+    color: #212121;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1em;
+    font-size: 1.1rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	svg path {
+		fill: @color-3;
+		stroke: rgb(247, 247, 247);
+		stroke-width: 1.66365px;
+	}
+	svg path:hover {
+		cursor: pointer;
+		fill: @color-10;
+	}
+	body * {
+		outline: none !important;
+		touch-action: manipulation;
+	}
+	
+	svg {
+		height: 100%;
+		width: 100%;
+	}
+	
+	.mapsvg-wrap-scrollpane {
+		display: flex;
+		max-width: 1024px;
+		margin: 0 auto;
+	}
+}

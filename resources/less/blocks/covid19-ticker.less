@@ -1,0 +1,41 @@
+.covid19-ticker {
+  background-color: @color-7;
+  padding: @gutter;
+  min-height: 250px;
+  color: @color-1;
+  font-family: "Roboto";
+  justify-content: center;
+  align-items: center;
+  .date {
+    font-size: 1.2em;
+    margin-bottom: (@gutter / 2);
+    line-height: 1.5;
+    font-weight: 700;
+  }
+  .error {
+    display: none;
+  }
+  .block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: (@gutter / 2);
+    .label {
+      font-size: 0.8em;
+      margin-bottom: 0;
+      color: @color-8;
+    }
+    .digit {
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 1.6em;
+      color: @color-3;
+    }
+    &.source {
+      color: @color-8;
+      display: inline-block;
+      font-size: 0.7em;
+      margin: 0;
+    }
+  }
+}

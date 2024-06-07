@@ -1,0 +1,1 @@
+<h2><?php view::text($block['title']); ?></h2>

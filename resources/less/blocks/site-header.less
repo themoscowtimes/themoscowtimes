@@ -1,0 +1,36 @@
+.site-header {
+	
+	border-top: 3px solid @color-3;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+	 &__logo {
+		display: flex;
+		flex-flow: column;
+		text-decoration: none;
+		width: 410px;
+		max-width: 100%;
+	 }
+	&__text {
+		text-transform: uppercase;
+		font-weight: 600;
+		color: rgb(49, 108, 170);
+		font-size: 14px;
+		font-family: @font-family-2;
+		align-self: flex-end;
+		margin-top: -0.5rem;
+		@media @xs {
+			font-size: .4rem;
+			margin: 0;
+			line-height: 1;
+		}
+	}
+	&__contribute {
+		flex-grow: 2;
+	}
+	
+	&__account {
+		padding: 0 0 0 (@gutter);
+	}
+}

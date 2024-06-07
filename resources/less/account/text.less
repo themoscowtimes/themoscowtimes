@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Roboto:wght@400;500;700;900&display=swap');
+
+/**
+* Only textual styling, no borders, backgrounds
+* Color: only default.
+*/
+#text {
+	@font-family-1: 'Roboto', sans-serif;
+	@font-family-2: 'Merriweather', serif;
+
+	.default(@factor: 1) {
+		font-family: @font-family-1;
+		font-size: 18px;
+		line-height: 1.4em;
+		font-weight: 400;
+		@media @xs {
+			font-size: 16px;
+		}
+	}
+	
+	.bodytext(@factor: 1) {
+		font-family: @font-family-2;
+		font-size: 16px;
+		line-height: 1.8em;
+		font-weight: 300;
+		@media @xs {
+			font-size: 14px;
+		}
+	}
+	
+	
+	.heading(@factor: 1) {
+		font-family: @font-family-1;
+		font-size: calc(@factor * 36px);
+		line-height: 1.8em;
+		font-weight: 700;
+		@media @md-down {font-size: calc(@factor * 24px);} /* 1199 down */
+	}
+	
+	
+	.heading-1(@factor: 1) {
+		font-family: @font-family-1;
+		font-size: calc(@factor * 56px);
+		line-height: 1.4em;
+		font-weight: 900;
+		@media @md-down {font-size: calc(@factor * 52px);} /* 1199 down */
+		@media @sm-down {font-size: calc(@factor * 52px);} /* 991 down */
+		@media @xs {font-size: calc(@factor * 24px);}
+	}
+	
+	.heading-2(@factor: 1) {
+		font-family: @font-family-1;
+		font-size: calc(@factor * 20px);
+		line-height: 1.8em;
+		font-weight: 700;
+		@media @sm-down {font-size: calc(@factor * 18px);} /* 991 down */
+	}
+	
+/*	.heading-3 {
+		//wysiwyg h3 
+		font-size: 22px;
+		line-height: 1.2em;
+		font-weight: 700;
+		@media @md-down {font-size: 30px;}
+		@media @sm-down {font-size: 24px;}
+		@media @xs {}
+	} */
+	
+	.heading-3(@factor: 1) {
+		font-size: calc(@factor * 16px);
+		line-height: 1.8em;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	
+	
+	.heading-4 {
+		//cta sub & super title 
+		font-size: 30px;
+		line-height: 1.6em;
+		font-weight: 400;
+	}
+	.heading-4(@factor: 1) {
+		font-size: calc(@factor * 28px);
+		line-height: 1.2em;
+		font-weight: 400;
+		//@media @md-down {font-size: calc(@factor * 30px);} /* 1199 down */
+		@media @sm-down {font-size: calc(@factor * 24px);} /* 991 down */
+		//@media @xs {font-size: calc(@factor * 20px);}
+	}
+	
+	
+	.heading-5 {
+		font-size:  20px;
+		line-height: 1.2em;
+		font-weight: 600;
+	}
+	
+	.small {
+		
+	}
+}

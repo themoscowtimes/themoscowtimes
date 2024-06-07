@@ -1,0 +1,116 @@
+/**
+* Generate Helper classes
+**/
+
+// Margin classes
+#margin.classes();
+
+// Padding classes
+#padding.classes();
+
+// Build container
+#container.classes();
+
+// Build grid
+#grid.classes();
+
+/**
+* Other helper classes
+*/
+.hidden {
+	display: none !important;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-middle {
+	vertical-align: middle;
+}
+
+.width-25 {
+	width: 25%;
+}
+
+.width-50 {
+	width: 50%;
+}
+
+.width-75 {
+	width: 75%;
+}
+
+.width-100 {
+	width: 100%;
+}
+
+// Responsive versions
+each(xs sm-down sm sm-up md-down md md-up lg-down lg lg-up xl, {
+	#media.query(@value, {
+		.hidden-@{value} {
+			display: none !important;
+		}
+		.float-left-@{value} {
+			float: left;
+		}
+		.float-right-@{value} {
+			float: right;
+		}
+		.align-center-@{value} {
+			text-align: center;
+		}
+		.align-middle-@{value} {
+			vertical-align: middle;
+		}
+		.width-25-@{value} {
+			width: 25%;
+		}
+		.width-50-@{value} {
+			width: 50%;
+		}
+		.width-75-@{value} {
+			width: 75%;
+		}
+		.width-100-@{value} {
+			width: 100%;
+		}	
+	})
+});
+
+.clickable {
+	cursor: pointer;
+}
+
+.clear, .clearfix {
+	&:before,
+	&:after { 
+		content: ' ';
+		display: table;
+		clear: both;
+	}
+}
+
+.hyphenate {
+  	word-break: break-word; /* Chrome, sort of */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+.transition {
+	#mixin.transition(all 0.3s ease);
+}
+
+.radius {
+	#mixin.radius();
+}

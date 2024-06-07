@@ -1,0 +1,44 @@
+.footer {
+	@background: @color-1;
+	@color-primary: lighten(@color-1, 70%);
+	@color-border: lighten(@color-1, 90%);
+	
+	#padding.y(4);
+	border-top: 1px solid @color-border;
+	font-size: 14px;
+	text-align: center;
+	color: 	@color-primary;
+	
+	&__link {
+		text-decoration: underline;
+		
+	}
+	&__text {
+		&--full {
+			@media @sm-down {
+				#padding.y(2);
+				display: block;
+			}
+		}
+	}
+		
+	
+	
+	//styling footer menu on default elements 
+	& li.has-child {
+		color: @color-primary;
+		font-weight: 500;
+	}
+	&  .depth-0 > li{
+		li {
+			color: fade(#fff, 70%);
+			font-weight: 400;
+			a {
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}

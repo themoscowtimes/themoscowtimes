@@ -1,0 +1,137 @@
+#mixin() {
+	.text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+		text-shadow: @string;
+	}
+
+	.box-shadow (@string) {
+		-webkit-box-shadow: @string;
+		-moz-box-shadow:	@string;
+		box-shadow:         @string;
+	}
+
+	.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+		-webkit-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+		-moz-box-shadow:	@x @y @blur @spread rgba(0, 0, 0, @alpha);
+		box-shadow:			@x @y @blur @spread rgba(0, 0, 0, @alpha);
+	}
+
+	.box-shadow(@variables:''){
+		.drop-shadow(@variables);
+	}
+
+	.inner-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+		-webkit-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+		-moz-box-shadow:    inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+		box-shadow:         inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	}
+
+	.box-sizing (@type: border-box) {
+		-webkit-box-sizing: @type;
+		-moz-box-sizing:    @type;
+		box-sizing:         @type;
+	}
+
+	.radius (@radius: 4px) {
+		-webkit-border-radius: @radius;
+		-moz-border-radius:    @radius;
+		border-radius:         @radius;
+
+		-moz-background-clip:    padding;
+		-webkit-background-clip: padding-box;
+		background-clip:         padding-box;
+	}
+
+	.radiuses (@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+		-webkit-border-top-right-radius:    @topright;
+		-webkit-border-bottom-right-radius: @bottomright;
+		-webkit-border-bottom-left-radius:  @bottomleft;
+		-webkit-border-top-left-radius:     @topleft;
+
+		-moz-border-radius-topright:        @topright;
+		-moz-border-radius-bottomright:     @bottomright;
+		-moz-border-radius-bottomleft:      @bottomleft;
+		-moz-border-radius-topleft:         @topleft;
+
+		border-top-right-radius:            @topright;
+		border-bottom-right-radius:         @bottomright;
+		border-bottom-left-radius:          @bottomleft;
+		border-top-left-radius:             @topleft;
+
+		-moz-background-clip:    padding; 
+		-webkit-background-clip: padding-box; 
+		background-clip:         padding-box; 
+	}
+
+	
+	.opacity (@opacity: 0.5) {
+		-webkit-opacity: 	@opacity;
+		-moz-opacity: 		@opacity;
+		opacity:			@opacity;
+	}
+
+	.gradient (@startColor: #eee, @endColor: white, @direction: top-bottom) {
+		& when (@direction = top-bottom) {
+			background-color: @startColor;
+			background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+			background: -webkit-linear-gradient(top, @startColor, @endColor);
+			background: -moz-linear-gradient(top, @startColor, @endColor);
+			background: -ms-linear-gradient(top, @startColor, @endColor);
+			background: -o-linear-gradient(top, @startColor, @endColor);
+		}
+		& when (@direction = left-right) {
+			background-color: @startColor;
+			background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+			background: -webkit-linear-gradient(left, @startColor, @endColor);
+			background: -moz-linear-gradient(left, @startColor, @endColor);
+			background: -ms-linear-gradient(left, @startColor, @endColor);
+			background: -o-linear-gradient(left, @startColor, @endColor);
+		}
+	}
+
+
+	.animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
+		-webkit-animation: @name @duration @delay @ease;
+		-moz-animation:    @name @duration @delay @ease;
+		-ms-animation:     @name @duration @delay @ease;
+		animation:		   @name @duration @delay @ease;
+	}
+
+
+	.transition (@transition) {
+		-webkit-transition: @transition;  
+		-moz-transition:    @transition;
+		-ms-transition:     @transition; 
+		transition:			@transition;  
+	}
+
+	.transform (@transform:rotate(7deg)) {
+		-ms-transform:		@transform;
+		-webkit-transform:	@transform;
+		-ms-transition:		@transform;
+		transform:			@transform;
+	}
+
+	.blur (@blur: 3px) {
+		-webkit-filter:	blur(@blur);
+		-moz-filter:	blur(@blur);
+		-o-filter:		blur(@blur);
+		-ms-filter:		blur(@blur);
+		filter:			blur(@blur);
+		filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='3'%20/></filter></svg>#blur");
+		verflow: visible !important;
+	}
+	
+	.flex {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+	}
+	
+	.flexbox {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+	}
+}

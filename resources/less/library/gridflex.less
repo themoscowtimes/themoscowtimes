@@ -1,0 +1,313 @@
+
+.row-flex {
+
+	margin-left: -(@gutter-width/2);
+	margin-right: -(@gutter-width/2);
+}
+
+.row-flex {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	
+	-webkit-box-direction: normal;
+	-webkit-box-orient: horizontal;
+	
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	
+	margin-left: -(@gutter-width/2);
+	margin-right: -(@gutter-width/2);
+	_flex-basis: 100%;
+	
+	_width: calc(~'100% + ' @gutter-width);
+	
+	clear: both;
+	
+	order: 1000; /* init value, otherwise single item order: 1 appears last.*/
+	
+}
+
+.row-flex > [class*="col"] {
+	
+	height: auto;	
+	
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	
+	/*
+	flex-grow: 0;
+	flex-shrink: 1;
+	flex-basis: auto;
+	*/
+	
+	-webkit-box-flex: 0 1 auto;
+	-webkit-flex: 0 1 auto;
+	-ms-flex: 0 1 auto;
+	flex: 0 1 auto;
+	
+	margin-right: -0.1px; // workaround for IE, otherwise last col won't fit (weird)
+	
+	-webkit-box-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	
+	padding-left: (@gutter-width/2);
+	padding-right: (@gutter-width/2);
+	
+	order: 1000; /* init value, otherwise single item order: 1 appears last.*/
+
+	overflow: hidden;
+	
+	@media @xs {
+		
+	}
+	
+}
+/*
+.row-flex > [class*="col"] * {
+	-webkit-flex: 1 1 auto;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto; // force children of col-flex to stretch, especially for .box-white, but shouldn't conflict.
+	min-height: 1px;
+}
+*/
+
+
+
+// shrinks col width to content
+.row-flex > .col-auto {
+	-webkit-flex: 0 0 auto;
+	-ms-flex: 0 0 auto;
+	flex: 0 0 auto; 
+}
+
+
+
+.row-flex > .col-0 {
+	width: 0;
+}
+
+/* grid flex */
+@iterations: 12;
+.col-flex-loop (@i) when (@i > 0) {
+    .row-flex >.col-@{i} {
+		width: calc(~"@{i}/12*100%");
+		max-width: calc(~"@{i}/12*100%");
+    }
+    .col-flex-loop(@i - 1);
+}
+.col-flex-loop(@iterations);
+
+// no width, but fills space (evenly with other .col's)
+.row-flex > .col {
+	-webkit-flex-grow: 1;
+	-ms-flex-grow: 1;
+	flex-grow: 1;
+	
+	-webkit-flex-basis: 0;
+	-ms-flex-basis: 0;
+	flex-basis: 0;
+	
+}
+
+
+.row-flex.gutter-0 {
+	margin-left: 0;
+	margin-right: 0;
+	& > [class*="col"] {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.row-flex.gutter-1{
+	margin-left: -(@gutter/5);
+	margin-right: -(@gutter/5);
+	& > [class*="col"] {
+		padding-left: (@gutter/5);
+		padding-right: (@gutter/5);
+	}
+}
+
+.row-flex.gutter-2{
+	margin-left: -(@gutter/2);
+	margin-right: -(@gutter/2);
+	& > [class*="col"] {
+		padding-left: (@gutter/2);
+		padding-right: (@gutter/2);
+	}
+}
+
+
+.row-flex.gutter-3 {
+	margin-left: -(@gutter/2)*1.5;
+	margin-right: -(@gutter/2)*1.5;
+	& > [class*="col"] {
+		padding-left: (@gutter/2)*1.5;
+		padding-right: (@gutter/2)*1.5;
+	}
+}
+
+
+.row-flex.gutter-4 {
+	margin-left: -(@gutter*1.5);
+	margin-right: -(@gutter*1.5);
+	& > [class*="col"] {
+		padding-left: (@gutter*1.5);
+		padding-right: (@gutter*1.5);
+	}
+}
+
+.row-flex.gutter-5 {
+	margin-left: -(@gutter*2);
+	margin-right: -(@gutter*2);
+	& > [class*="col"] {
+		padding-left: (@gutter*2);
+		padding-right: (@gutter*2);
+	}
+}
+
+
+@media @xs {
+	.row-flex > [class*="col"] {
+		width: 100%;
+		max-width: 100%;
+		flex-basis: auto;
+	}
+	
+	.row-flex > .col-auto-xs {
+		width: auto;
+		max-width: initial;
+		-webkit-flex: 0 0 auto!important;
+		-ms-flex: 0 0 auto!important;
+		flex: 0 0 auto!important; 
+		
+	}
+}
+
+@media @xs {
+	/* grid flex */
+	@iterations: 12;
+	.col-flex-xs-loop (@i) when (@i > 0) {
+		.row-flex > .col-@{i}-xs {
+			width: calc(~"@{i}/12*100%");
+			max-width: calc(~"@{i}/12*100%");
+			flex-basis: auto;
+		}
+		.col-flex-xs-loop(@i - 1);
+	}
+	.col-flex-xs-loop(@iterations);
+}
+
+
+@media @sm {
+	/* grid flex */
+	@iterations: 12;
+	.col-flex-sm-loop (@i) when (@i > 0) {
+		.row-flex > .col-@{i}-sm {
+			width: calc(~"@{i}/12*100%");
+			max-width: calc(~"@{i}/12*100%");
+			flex-basis: auto;
+		}
+		.col-flex-sm-loop(@i - 1);
+	}
+	.col-flex-sm-loop(@iterations);
+}
+
+
+@media @sm-down {
+	/* grid flex */
+	@iterations: 12;
+	.col-flex-sm-down-loop (@i) when (@i > 0) {
+		.row-flex > .col-@{i}-sm-down {
+			width: calc(~"@{i}/12*100%");
+			max-width: calc(~"@{i}/12*100%");
+			flex-basis: auto;
+		}
+		.col-flex-sm-down-loop(@i - 1);
+	}
+	.col-flex-sm-down-loop(@iterations);
+}
+
+@media @sm-up {
+	/* grid flex */
+	@iterations: 12;
+	.col-flex-sm-up-loop (@i) when (@i > 0) {
+		.row-flex > .col-@{i}-sm-up {
+			width: calc(~"@{i}/12*100%");
+			max-width: calc(~"@{i}/12*100%");
+			flex-basis: auto;
+		}
+		.col-flex-sm-up-loop(@i - 1);
+	}
+	.col-flex-sm-up-loop(@iterations);
+}
+
+
+@media @md {
+	/* grid flex */
+	@iterations: 12;
+	.col-flex-md-loop (@i) when (@i > 0) {
+		.row-flex > .col-@{i}-md {
+			width: calc(~"@{i}/12*100%");
+			max-width: calc(~"@{i}/12*100%");
+			flex-basis: auto;
+		}
+		.col-flex-md-loop(@i - 1);
+	}
+	.col-flex-md-loop(@iterations);
+}
+
+
+@media @md-down {
+	/* grid flex */
+	@iterations: 12;
+	.col-flex-md-down-loop (@i) when (@i > 0) {
+		.row-flex > .col-@{i}-md-down {
+			width: calc(~"@{i}/12*100%");
+			max-width: calc(~"@{i}/12*100%");
+			flex-basis: auto;
+		}
+		.col-flex-md-down-loop(@i - 1);
+	}
+	.col-flex-md-down-loop(@iterations);
+}
+
+@media @md-up {
+	/* grid flex */
+	@iterations: 12;
+	.col-flex-md-up-loop (@i) when (@i > 0) {
+		.row-flex > .col-@{i}-md-up {
+			width: calc(~"@{i}/12*100%");
+			max-width: calc(~"@{i}/12*100%");
+			flex-basis: auto;
+		}
+		.col-flex-md-up-loop(@i - 1);
+	}
+	.col-flex-md-up-loop(@iterations);
+}
+
+
+@media @lg {
+	/* grid flex */
+	@iterations: 12;
+	.col-flex-lg-loop (@i) when (@i > 0) {
+		.row-flex > .col-@{i}-lg {
+			width: calc(~"@{i}/12*100%");
+			max-width: calc(~"@{i}/12*100%");
+			flex-basis: auto;
+		}
+		.col-flex-lg-loop(@i - 1);
+	}
+	.col-flex-lg-loop(@iterations);
+}

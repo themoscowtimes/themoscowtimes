@@ -1,0 +1,89 @@
+#config() {
+	
+	.color {
+		1: #000; // default color
+		2: #fff; // default background - white
+		3: #3263c0; // blue
+		4: #fbe500; //  yellow
+		5: #ed1845; // red
+		6: #000; // black
+	}
+	
+	.margin {
+		default: 12px;
+		@size: {
+			1: 6px;
+			2: 12px;
+			3: 24px;
+			4: 36px;
+			5: 48px;
+			6: 60px;
+			7: 80px;
+		};
+		@media: {
+			xs: 0.65;
+			sm: 0.7;
+			md: 0.75;
+			lg: 0.875;
+			xl: 1;
+		};
+	}
+	
+	.padding {
+		default: 12px;
+		@size: {
+			1: 8px;
+			2: 12px;
+			3: 16px;
+			4: 24px;
+			5: 36px;
+			6: 60px;
+			7: 96px;
+		};
+		@media: {
+			xs: 0.625;
+			sm: 0.625;
+			md: 0.75;
+			lg: 0.875;
+			xl: 1;
+		};
+	}
+	
+	.media {
+		xl: 1600px;
+		lg: 1200px;
+		md: 992px;
+		sm: 768px;
+	}
+	
+	.container {
+		small: 440px;
+		medium: 992px;
+		//large: 1278px;
+		large: 1180px;
+		@padding: {
+			xs: 11px;
+			sm: 24px;
+			md: 24px;
+			lg: 24px;
+			xl: 36px;
+		};
+		@gutter: {
+			xs: 12px;
+			sm: 16px;
+			md: 24px;
+			lg: 30px;
+			xl: 30px;
+		};
+	}
+	
+	.grid {
+		@gutter: {
+			xs: 16px;
+			sm: 16px;
+			md: 24px;
+			lg: 30px;
+			xl: 30px;
+		}
+	}
+}

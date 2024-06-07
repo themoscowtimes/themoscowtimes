@@ -1,0 +1,670 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 14, 2016, 2:03:20 PM
+    Author     : Patrick
+*/
+
+.hidden {
+	display: none!important;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.center-center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+};
+
+.mull-left {
+	float: left;
+}
+
+.mull-right {
+	float: right;
+}
+
+.width-100 {
+	width: 100%;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.switchable {
+	cursor: default;
+}
+
+.wrap-text(@break:auto) {
+	/* These are technically the same, but use both */
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+
+	-ms-word-break: break-all;
+	/* This is the dangerous one in WebKit, as it breaks things wherever */
+	word-break: break-all;
+	/* Instead use this non-standard one: */
+	word-break: break-word;
+
+	/* Adds a hyphen where the word breaks, if supported (No Blink) */
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+}
+
+.aligner {
+	/*
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	*/
+	display: inline-flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	height: 100%;
+}
+
+
+.aligner-item-top {
+	-webkit-align-self: flex-start;
+	-ms-flex-item-align: start;
+	align-self: flex-start;
+}
+
+.aligner-item-bottom {
+	-webkit-align-self: flex-end;
+	-ms-flex-item-align: end;
+	align-self: flex-end;
+}
+
+
+
+.helper-hide {
+	display: none!important;
+}
+
+.for(@media-sizes, {
+    .helper-hidden--@{value} {
+		@media @@value {
+			.helper-hide;
+		}
+	}
+	// depricated
+	.hidden-@{value} {
+		@media @@value {
+			.helper-hide;
+		}
+	}
+});
+
+.table {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+.table-cell {
+	display: table-cell;
+	width: 100%;
+}
+.align-middle {
+	vertical-align: middle;
+}
+
+.fixed{
+	position: fixed;
+}
+
+.helper-flex {
+	display: flex!important;
+}
+
+.for(@media-sizes, {
+    .helper-flex--@{value} {
+		@media @@value {
+			.helper-flex;
+		}
+	}
+});
+
+
+.helper-sticky {
+	position: sticky;
+	top: 0;
+}
+
+.for(@media-sizes, {
+    .helper-sticky--@{value} {
+		@media @@value {
+			.helper-sticky;
+		}
+	}
+});
+
+
+.avoid-break-inside-column(){
+	display: inline-block;
+	page-break-inside: avoid; /* For Firefox. */
+	-webkit-column-break-inside: avoid; /* For Chrome & friends. */
+	break-inside: avoid; /* For standard browsers like IE. :-) */
+}
+
+// Wordpress Element / Helper Classes
+
+.alignleft {
+	float: left;
+	margin-right: @gutter-width;
+}
+
+.alignright {
+	float: right;
+	margin-left: @gutter-width;
+}
+
+
+
+.fluid-width-video-wrapper {
+	line-height: 0;
+	height: 0;
+	position: relative;
+	width: 100%;
+	//padding-top: 9/16*100%;
+	//padding-top set by JS
+	iframe, object, embed, video {
+		position: absolute;              
+         top: 0;                          
+         left: 0;                         
+         width: 100%;                     
+         height: 100%;        
+	}
+}
+
+
+
+// spacing helpers
+@space-1: (@gutter*0.25);
+@space-2: (@gutter*0.5);
+@space-3: @gutter;
+@space-4: (@gutter*1.5);
+@space-5: (@gutter*2);
+
+
+// padding
+.p-0 {
+	padding: 0;
+}
+.p-1 {
+	padding: @space-1;
+}
+.p-2 {
+	padding: @space-2;
+}
+.p-3 {
+	padding: @space-3;
+}
+.p-4 {
+	padding: @space-4;
+}
+.p-5 {
+	padding: @space-5;
+}
+
+.for(@media-sizes, {
+	.p-0-@{value} {
+		@media @@value {
+			padding: 0;
+		}
+	}
+	.p-1-@{value} {
+		@media @@value {
+			padding: @space-1;
+		}
+	}
+	 .p-2-@{value} {
+		@media @@value {
+			padding: @space-2;
+		}
+	}
+	 .p-3-@{value} {
+		@media @@value {
+			padding: @space-3;
+		}
+	}
+	 .p-4-@{value} {
+		@media @@value {
+			padding: @space-4;
+		}
+	}
+	 .p-5-@{value} {
+		@media @@value {
+			padding: @space-5;
+		}
+	}
+});
+
+
+
+
+
+// padding-x
+.px-0 {
+	padding-left: 0;
+	padding-right: 0;
+}
+.px-1 {
+	padding-left: @space-1;
+	padding-right: @space-1;
+}
+.px-2 {
+	padding-left: @space-2;
+	padding-right: @space-2;
+}
+.px-3 {
+	padding-left: @space-3;
+	padding-right: @space-3;
+}
+.px-4 {
+	padding-left: @space-4;
+	padding-right: @space-4;
+}
+.px-5 {
+	padding-left: @space-5;
+	padding-right: @space-5;
+}
+
+.for(@media-sizes, {
+	.px-0-@{value} {
+		@media @@value {
+			margin: 0;
+		}
+	}
+	.px-1-@{value} {
+		@media @@value {
+			padding-left: @space-1;
+			padding-right: @space-1;
+		}
+	}
+	 .px-2-@{value} {
+		@media @@value {
+			padding-left: @space-2;
+			padding-right: @space-2;
+		}
+	}
+	 .px-3-@{value} {
+		@media @@value {
+			padding-left: @space-3;
+			padding-right: @space-3;
+		}
+	}
+	 .px-4-@{value} {
+		@media @@value {
+			padding-left: @space-4;
+			padding-right: @space-4;
+		}
+	}
+	 .px-5-@{value} {
+		@media @@value {
+			padding-left: @space-5;
+			padding-right: @space-5;
+		}
+	}
+});
+
+
+
+// padding-y
+.py-0 {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.py-1 {
+	padding-top: @space-1;
+	padding-bottom: @space-1;
+}
+.py-2 {
+	padding-top: @space-2;
+	padding-bottom: @space-2;
+}
+.py-3 {
+	padding-top: @space-3;
+	padding-bottom: @space-3;
+}
+.py-4 {
+	padding-top: @space-4;
+	padding-bottom: @space-4;
+}
+.py-5 {
+	padding-top: @space-5;
+	padding-bottom: @space-5;
+}
+
+.for(@media-sizes, {
+	.py-0-@{value} {
+		@media @@value {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+	.py-1-@{value} {
+		@media @@value {
+			padding-top: @space-1;
+			padding-bottom: @space-1;
+		}
+	}
+	 .py-2-@{value} {
+		@media @@value {
+			padding-top: @space-2;
+			padding-bottom: @space-2;
+		}
+	}
+	 .py-3-@{value} {
+		@media @@value {
+			padding-top: @space-3;
+			padding-bottom: @space-3;
+		}
+	}
+	 .py-4-@{value} {
+		@media @@value {
+			padding-top: @space-4;
+			padding-bottom: @space-4;
+		}
+	}
+	 .py-5-@{value} {
+		@media @@value {
+			padding-top: @space-5;
+			padding-bottom: @space-5;
+		}
+	}
+});
+
+
+
+// padding-y
+.pt-0 {
+
+	padding-top: 0;
+}
+.pt-1 {
+
+	padding-top: @space-1;
+}
+.pt-2 {
+	padding-top: @space-2;
+}
+.pt-3 {
+	padding-top: @space-3;
+}
+.pt-4 {
+	padding-top: @space-4;
+}
+.pt-5 {
+	padding-top: @space-5;
+}
+
+.for(@media-sizes, {
+	.pt-0-@{value} {
+		@media @@value {
+			padding-top: 0;
+		}
+	}
+	.pt-1-@{value} {
+		@media @@value {
+			padding-top: @space-1;
+		}
+	}
+	 .pt-2-@{value} {
+		@media @@value {
+			padding-top: @space-2;
+		}
+	}
+	 .pt-3-@{value} {
+		@media @@value {
+			padding-top: @space-3;
+		}
+	}
+	 .pt-4-@{value} {
+		@media @@value {
+			padding-top: @space-4;
+		}
+	}
+	 .pt-5-@{value} {
+		@media @@value {
+			padding-top: @space-5;
+		}
+	}
+});
+
+// padding-y
+.pb-0 {
+
+	padding-bottom: 0;
+}
+.pb-1 {
+
+	padding-bottom: @space-1;
+}
+.pb-2 {
+	padding-bottom: @space-2;
+}
+.pb-3 {
+	padding-bottom: @space-3;
+}
+.pb-4 {
+	padding-bottom: @space-4;
+}
+.pb-5 {
+	padding-bottom: @space-5;
+}
+
+.for(@media-sizes, {
+	.pb-0-@{value} {
+		@media @@value {
+			padding-bottom: 0;
+		}
+	}
+	.pb-1-@{value} {
+		@media @@value {
+			padding-bottom: @space-1;
+		}
+	}
+	 .pb-2-@{value} {
+		@media @@value {
+			padding-bottom: @space-2;
+		}
+	}
+	 .pb-3-@{value} {
+		@media @@value {
+			padding-bottom: @space-3;
+		}
+	}
+	 .pb-4-@{value} {
+		@media @@value {
+			padding-bottom: @space-4;
+		}
+	}
+	 .pb-5-@{value} {
+		@media @@value {
+			padding-bottom: @space-5;
+		}
+	}
+});
+
+
+
+
+
+
+// margin
+.m-0 {
+	margin: 0;
+}
+.m-1 {
+	margin: @space-1;
+}
+.m-2 {
+	margin: @space-2;
+}
+.m-3 {
+	margin: @space-3;
+}
+.m-4 {
+	margin: @space-4;
+}
+.m-5 {
+	margin: @space-5;
+}
+
+.for(@media-sizes, {
+	.m-0-@{value} {
+		@media @@value {
+			margin: 0;
+		}
+	}
+	.m-1-@{value} {
+		@media @@value {
+			margin: @space-1;
+		}
+	}
+	 .m-2-@{value} {
+		@media @@value {
+			margin: @space-2;
+		}
+	}
+	 .m-3-@{value} {
+		@media @@value {
+			margin: @space-3;
+		}
+	}
+	 .m-4-@{value} {
+		@media @@value {
+			margin: @space-4;
+		}
+	}
+	 .m-5-@{value} {
+		@media @@value {
+			margin: @space-5;
+		}
+	}
+});
+
+
+
+// margin-top
+.mt-0 {
+	margin-top: 0;
+}
+.mt-1 {
+	margin-top: @space-1;
+}
+.mt-2 {
+	margin-top: @space-2;
+}
+.mt-3 {
+	margin-top: @space-3;
+}
+.mt-4 {
+	margin-top: @space-4;
+}
+.mt-5 {
+	margin-top: @space-5;
+}
+
+.for(@media-sizes, {
+	.mt-0-@{value} {
+		@media @@value {
+			margin-top: 0;
+		}
+	}
+	.mt-1-@{value} {
+		@media @@value {
+			margin-top: @space-1;
+		}
+	}
+	 .mt-2-@{value} {
+		@media @@value {
+			margin-top: @space-2;
+		}
+	}
+	 .mt-3-@{value} {
+		@media @@value {
+			margin-top: @space-3;
+		}
+	}
+	 .mt-4-@{value} {
+		@media @@value {
+			margin-top: @space-4;
+		}
+	}
+	 .mt-5-@{value} {
+		@media @@value {
+			margin-top: @space-5;
+		}
+	}
+});
+
+
+// margin-bottom
+.mb-0 {
+	margin-bottom: 0;
+}
+.mb-1 {
+	margin-bottom: @space-1;
+}
+.mb-2 {
+	margin-bottom: @space-2;
+}
+.mb-3 {
+	margin-bottom: @space-3;
+}
+.mb-4 {
+	margin-bottom: @space-4;
+}
+.mb-5 {
+	margin-bottom: @space-5;
+}
+
+.for(@media-sizes, {
+	.mb-0-@{value} {
+		@media @@value {
+			margin-bottom: 0;
+		}
+	}
+	.mb-1-@{value} {
+		@media @@value {
+			margin-bottom: @space-1;
+		}
+	}
+	 .mb-2-@{value} {
+		@media @@value {
+			margin-bottom: @space-2;
+		}
+	}
+	 .mb-3-@{value} {
+		@media @@value {
+			margin-bottom: @space-3;
+		}
+	}
+	 .mb-4-@{value} {
+		@media @@value {
+			margin-bottom: @space-4;
+		}
+	}
+	 .mb-5-@{value} {
+		@media @@value {
+			margin-bottom: @space-5;
+		}
+	}
+});

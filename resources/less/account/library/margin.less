@@ -1,0 +1,105 @@
+/**
+* Margins
+*/
+
+// Set CSS variables
+each(#config.margin()[@media], {
+	#media.query(@key, {
+		:root {
+			--margin: @value;
+		}
+	})
+});
+
+#margin {
+	// Generate helper classes
+	.classes() {
+		each(#config.margin()[@size], {
+			.m-@{key} { #margin(@key) }
+			.mt-@{key} { #margin.top(@key) }
+			.mr-@{key} { #margin.right(@key) }
+			.mb-@{key} { #margin.bottom(@key) }
+			.ml-@{key} { #margin.left(@key) }
+			.mx-@{key} { #margin.x(@key) }
+			.my-@{key} { #margin.y(@key) }
+		});
+		.m { #margin() }
+		.mt { #margin.top() }
+		.mr { #margin.right() }
+		.mb { #margin.bottom() }
+		.ml { #margin.left() }
+		.mx { #margin.x() }
+		.my { #margin.y() }
+	}
+	
+	// Mixins
+	.top(@size) {
+		@value: #config.margin()[@size][$@size];
+		margin-top: calc( var(--margin) * @value);
+	}
+	.right(@size) {
+		@value: #config.margin()[@size][$@size];
+		margin-right: calc( var(--margin) * @value);
+	}
+	.bottom(@size) {
+		@value: #config.margin()[@size][$@size];
+		margin-bottom: calc( var(--margin) * @value);
+	}
+	.left(@size) {
+		@value: #config.margin()[@size][$@size];
+		margin-left: calc( var(--margin) * @value);
+	}
+	.x(@size) {
+		@value: #config.margin()[@size][$@size];
+		margin-left: calc( var(--margin) * @value);
+		margin-right: calc( var(--margin) * @value);
+	}
+	.y(@size) {
+		@value: #config.margin()[@size][$@size];
+		margin-top: calc( var(--margin) * @value);
+		margin-bottom: calc( var(--margin) * @value);
+	}
+	.top() {
+		@value: #config.margin()[default];
+		margin-top: calc( var(--margin) * @value);
+	}
+	.right() {
+		@value: #config.margin()[default];
+		margin-right: calc( var(--margin) * @value);
+	}
+	.bottom() {
+		@value: #config.margin()[default];
+		margin-bottom: calc( var(--margin) * @value);
+	}
+	.left() {
+		@value: #config.margin()[default];
+		margin-left: calc( var(--margin) * @value);
+	}
+	.x() {
+		@value: #config.margin()[default];
+		margin-left: calc( var(--margin) * @value);
+		margin-right: calc( var(--margin) * @value);
+	}
+	.y() {
+		@value: #config.margin()[default];
+		margin-top: calc( var(--margin) * @value);
+		margin-bottom: calc( var(--margin) * @value);
+	}
+}
+
+// Mixin for all margins
+#margin(@size) {
+	@value: #config.margin()[@size][$@size];
+	margin-top: calc( var(--margin) * @value);
+	margin-right: calc( var(--margin) * @value);
+	margin-bottom: calc( var(--margin) * @value);
+	margin-left: calc( var(--margin) * @value);
+}
+
+#margin() {
+	@value: #config.margin()[default];
+	margin-top: calc( var(--margin) * @value);
+	margin-right: calc( var(--margin) * @value);
+	margin-bottom: calc( var(--margin) * @value);
+	margin-left: calc( var(--margin) * @value);
+}

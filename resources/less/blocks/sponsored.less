@@ -1,0 +1,19 @@
+.sponsored {
+	&--mobile-banner {
+
+		margin: 0 -(@gutter/2);
+		> div a {
+			display: block!important;
+			padding-top: 0!important;
+			border: 0!important;
+			> div {
+				width: 100%!important;
+				&:last-of-type {
+					margin: 0!important;
+					padding: (@gutter/3)!important;
+					padding-bottom: 0!important;
+				}
+			}
+		}
+	}
+}

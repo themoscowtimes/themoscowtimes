@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+
+// Root path used in config
+define('ROOT', realpath(__DIR__ . '/') . '/');
+
+// Composer autoload
+require ROOT . 'vendor/autoload.php';
+
+// Start app
+Sulfur\App::console(require ROOT . 'config/config.php', require ROOT . 'config/env.php');

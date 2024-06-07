@@ -1,0 +1,106 @@
+/*
+* DEFAULT
+*/
+
+html  {
+	line-height: 160%;
+	font-size: 100%;
+	font-size: 16px;
+	color: #000;
+	.font-family-3();
+	font-weight: 300;
+	color: @color-text-1;
+	
+	
+	@media @md-down {
+		font-size: 14x;
+	}
+	
+}
+
+body {
+	overflow-x: hidden;
+}
+
+
+h1, h2, h3, h4 {
+	line-height: inherit;
+}
+
+
+strong, b, .strong { 
+	font-weight: 600; 
+}
+
+em, i { font-style: italic; }
+
+.underline {
+	text-decoration: underline;
+}
+
+a { 
+	color: @color-1; 
+	cursor: pointer;
+}
+
+
+@transitionSpeed : 0.2s;
+@transitionSpeedIn : 0s;
+a, i, .anchor, .circle, button, .transition {
+	transition:
+		color @transitionSpeed ease 0s,
+		background-color @transitionSpeed ease 0s,
+		opacity @transitionSpeed ease 0s,
+		background-position @transitionSpeed ease 0s,
+		box-shadow @transitionSpeed ease 0s,
+		border @transitionSpeed ease 0s;
+	&:hover {
+		transition:
+		color @transitionSpeedIn ease 0s,
+		background-color @transitionSpeedIn ease 0s,
+		opacity @transitionSpeedIn ease 0s,
+		background-position @transitionSpeedIn ease 0s,
+		box-shadow @transitionSpeedIn ease 0s,
+		border @transitionSpeedIn ease 0s;
+	}
+}
+
+p a:hover { text-decoration: underline; }
+
+sup {
+	vertical-align: super;
+	font-size: 0.8em;
+}
+
+sub {
+	vertical-align: sub;
+	font-size: 0.8em;
+}
+
+i {
+
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+figure {
+	line-height: 0;
+}
+
+hr, .hr {
+	border-bottom: 3px solid @color-8;
+	&.color-1 { border-color: @color-1; }
+	&.color-2 { border-color: @color-2;	}
+	&.color-3 {	border-color: @color-3;	}
+	&.color-4 {	border-color: @color-4;	}
+	&.color-5 {	border-color: @color-5;	}
+	&.color-6 {	border-color: @color-6;	}
+	&.color-7 {	border-color: @color-7;	}
+	&.color-8 {	border-color: @color-8;	}
+	&.color-9 {	border-color: @color-9;	}
+	&.color-10 { border-color: @color-10; }
+	&.color-11 { border-color: @color-11; }
+}

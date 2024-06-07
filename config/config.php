@@ -1,0 +1,3 @@
+<?php return [
+	ROOT . 'config/'
+];

@@ -1,0 +1,149 @@
+.form {
+	@color-default: @color-1;
+	@color-lighter: lighten(@color-1, 70%);
+	@color-error: @color-5;
+	@color-border: lighten(@color-1, 82%);
+	@color-secondary: @color-3;
+	
+	//style 1
+	@color-background: lighten(@color-1, 95%);
+	text-align: left;
+	font-size: 15px;
+
+	// block styling with same form styling
+	&--boxed {
+		#padding(3);
+		background: @color-background;
+		border-top: 1px solid @color-default;
+		.form__input {
+			&--text,
+			&--select,
+			&--textarea {
+				border-color: @color-border;
+			}
+		}
+	}
+
+	
+	//form input elements
+	:not([class*="mce-"]) > input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]), 
+	:not([class*="mce-"]) > select, 
+	:not([class*="mce-"]) > textarea {
+		//width: 100%;
+		//background: #fff;
+		
+		//	border-radius: 0;
+	}
+	:not([class*="mce-"]) > textarea {
+		//height: 8em;
+	}
+	
+	&__input {
+		&--text,
+		&--select,
+		&--textarea {
+			width: 100%;
+			background: #fff;
+			color: @color-1;
+			border-radius: 0;
+			border: 1px solid @color-border;
+			appearance: auto;
+			padding: 6px;
+			transition: border-color ease 0.3s;
+			&:hover {
+				border-color: darken(@color-1, 10%);
+			}
+		}
+		&--textarea {
+			height: 8em;
+		}		
+		
+		&--button {
+			-webkit-appearance: none!important;
+			-moz-appearance: none!important;
+			appearance: none!important;
+			border-radius: 0;
+		}
+		
+		&--button-fit {
+			width: fit-content; // fix for button in from */
+		}
+		
+		// wrappers aroud elements 
+		&__radio,
+		&__toggle,
+		&__checkbox {
+			#margin.bottom(2);
+		}
+	}
+	// other mark-up elements
+	&__secton {} 
+	&__element {
+		&--address {
+			#padding(2);
+		}
+	}
+	&__item {
+		margin-bottom: 20px;
+		display: block;
+		
+		&--error {
+			.form__item__error {
+				color: @color-error !important;
+			}
+			.form__input {
+				border: 1px solid @color-error; 
+			}
+			.form__radio__label {
+				color: @color-error !important;
+			}
+			.form__checkbox+_label {
+				color: @color-error !important;
+			}
+		}
+	}
+	
+	&__label {
+		#margin.bottom(1);
+		display: block;
+		#text.heading-3();
+	}
+	
+	&__info {
+		//info block for additional info as privacy etc
+		display: block;
+		font-size: 14px;
+		color: @color-default;
+		@media @md-down {
+			font-size: 12px;
+		}
+		@media @xs {
+			font-size: 11px;
+		}
+	}
+	
+	&__header {
+		#margin.bottom(2);
+	}
+	&__error { 
+		// error block on top of form
+		#padding(1);
+		#margin.bottom(1);
+		background: fade(@color-error, 20%)	
+	}
+	&__message { 
+		// message block on top of form
+		#padding(1);
+		#margin.bottom(1);
+		background: fade(@color-default, 10%)	
+	}
+	
+	&__link {
+		cursor: pointer;
+		// link within a form
+		color: @color-secondary;
+		&:hover {
+			color: @color-default;
+		}
+	}
+}
